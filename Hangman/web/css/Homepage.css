@@ -1,0 +1,38 @@
+body{
+    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Ec7hwrKKxik52rser/4k-white-clean-bokeh-background-animation-seamless-loop_v4gh9vafe__F0000.png");
+    text-align: center;
+    font-family: Phosphate;
+    letter-spacing: 3px;
+    font-size: 30px;
+    line-height: 0.5;
+}
+#opening{
+    font-size: 60px;
+    margin-top: 230px;
+}
+button{
+    font-family: Nanum Pen Script;
+    font-size: 35px;
+    height:100px;
+    width:150px;
+    margin: 5px;
+    border-radius: 7px;
+    border: 2px solid #000000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+span{
+    font-family: "Nanum Pen Script";
+    font-size: 100px;
+    color: #bc1945;
+}
+relpos{
+    position: relative;
+    top: -100px;
+    left: -50px;
+}
+
+hangmanpic{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
