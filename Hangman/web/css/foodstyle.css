@@ -1,3 +1,31 @@
-body{
+body {
     background-image: url("KitchenPic.png")
+}
+div{
+    position:absolute;
+    bottom: 20px;
+    left: 20px;
+}
+button{
+    font-size: 40px;
+    font-family: "Nanum Pen Script", serif;
+    margin: 15px;
+    height:50px;
+    width:50px;
+    border-radius: 8px;
+    /*border: 0px solid #000000  ;*/
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#hanger{
+    position: absolute;
+    bottom: 100px;
+    right: -600px;
+}
+
+#guesses{
+    font-family: "Nanum Pen Script", serif;
+    font-size: 50px;
+    position: absolute;
+    bottom: -20px;
+    right: -350px;
 }
