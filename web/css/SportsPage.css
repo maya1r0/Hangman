@@ -8,7 +8,7 @@ div{
 }
 button{
     font-size: 40px;
-    font-family: "Nanum Pen Script";
+    font-family: "Nanum Pen Script", serif;
     margin: 15px;
     height:50px;
     width:50px;
@@ -23,7 +23,7 @@ button{
 }
 
 #guesses{
-    font-family: 'Nanum Pen Script';
+    font-family: 'Nanum Pen Script', serif;
     font-size: 50px;
     position: absolute;
     bottom: -20px;
