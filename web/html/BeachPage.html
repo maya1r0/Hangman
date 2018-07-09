@@ -50,6 +50,32 @@
 
     <p id="guesses"><b>Guesses Left: </b></p>
 
+    <p id="demo"></p>
+
+
 </div>
+<table id="dashes">
+<script>
+    var beachwords = ["waves", "sand", "swimsuit"];
+
+    function getFirstWord() {
+        return beachwords[0];
+    }
+
+    function getSecondWord(){
+        return beachwords[1];
+    }
+
+    if (getSecondWord().length > 0){
+        for (x=0; x<getSecondWord().length; x++){
+            document.write('<td><span id = "indvletters">' + "_ " + '</span></td>');
+        }
+    }
+
+    // var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // document.getElementById("demo").innerHTML = fruits.toString();
+
+</script>
+</table>
 </body>
 </html>
