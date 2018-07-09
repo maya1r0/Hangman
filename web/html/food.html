@@ -4,14 +4,32 @@
     <link rel="stylesheet" type="text/css" href="../css/foodstyle.css">
     <title>Hangman | Food</title>
     <script>
+
+        function generateWord(){
+            var codeNumber=Math.floor(Math.random()*Math.floor(words.length));
+            correctWord = words[codeNumber];
+            for(var i = 0; i<correctWord.length; i++)
+                letterArray[i] = correctWord.charAt(i);
+        }
+
         function makeGuess(buttonId){
             console.log(buttonId);
             var element = document.getElementById(buttonId);
             element.disabled = true;
         }
+        function checkAnswer(buttonId){
+            var inWord = false;
+            for (var i = 0; i<correctWord.length; i++){
+                if (letterArray[i] == buttonId)
+                    inWord = true;
+            }
+            return inWord;
+        }
     </script>
 </head>
-<body>
+<body onLoad="generateWord()">
+
+
 <div>
 
     <table style="margin-left: 100px">
@@ -58,5 +76,12 @@
     <p id="guesses"><b>Guesses Left: </b></p>
 
 </div>
+
+<script>
+    var correctWord;
+    var words = ["monkey", "bear", "dog", "cat", "hamster", "tiger", "lion", "horse", "cow", "peacock", "flamingo", "panther", "cheetah", "seal", "dolphin", "shark", "zebra", "giraffe", "elephant", "ostrich"];
+    var letterArray = new Array(correctWord.length);
+</script>
+
 </body>
 </html>

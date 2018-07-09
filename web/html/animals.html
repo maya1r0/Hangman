@@ -1,17 +1,31 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html>
 <head>
 
     <title>Hangman | Animals</title>
     <link rel="stylesheet" type="text/css" href="../css/animalstyle.css">
     <script>
-        function checkAnswer(character){
-
-        }
 
         function generateWord(){
-            var codeNumber=Math.floor(Math.random()*Math.floor(animalWords.length));
-            return animalWords[codeNumber];
+            var codeNumber=Math.floor(Math.random()*Math.floor(words.length));
+            correctWord = words[codeNumber];
+            for(var i = 0; i<correctWord.length; i++)
+                letterArray[i] = correctWord.charAt(i);
+        }
+
+        function makeGuess(buttonId){
+            console.log(buttonId);
+            var element = document.getElementById(buttonId);
+            element.disabled = true;
+        }
+        function checkAnswer(buttonId){
+            var inWord = false;
+            for (var i = 0; i<correctWord.length; i++){
+                if (letterArray[i] == buttonId)
+                    inWord = true;
+            }
+            return inWord;
         }
     </script>
 </head>
@@ -22,40 +36,40 @@
 
     <table style="margin-left: 100px">
         <tr>
-            <td><button>Q</button></td>
-            <td><button>W</button></td>
-            <td><button>E</button></td>
-            <td><button>R</button></td>
-            <td><button>T</button></td>
-            <td><button>Y</button></td>
-            <td><button>U</button></td>
-            <td><button>I</button></td>
-            <td><button>O</button></td>
-            <td><button>P</button></td>
+            <td><button id="Q" onClick="makeGuess('Q')">Q</button></td>
+            <td><button id="W" onClick="makeGuess('W')">W</button></td>
+            <td><button id="E" onClick="makeGuess('E')">E</button></td>
+            <td><button id="R" onClick="makeGuess('R')">R</button></td>
+            <td><button id="T" onClick="makeGuess('T')">T</button></td>
+            <td><button id="Y" onClick="makeGuess('Y')">Y</button></td>
+            <td><button id="U" onClick="makeGuess('U')">U</button></td>
+            <td><button id="I" onClick="makeGuess('I')">I</button></td>
+            <td><button id="O" onClick="makeGuess('O')">O</button></td>
+            <td><button id="P" onClick="makeGuess('P')">P</button></td>
         </tr>
     </table>
     <table style="margin-left: 130px">
         <tr>
-            <td><button>A</button></td>
-            <td><button>S</button></td>
-            <td><button>D</button></td>
-            <td><button>F</button></td>
-            <td><button>G</button></td>
-            <td><button>H</button></td>
-            <td><button>J</button></td>
-            <td><button>K</button></td>
-            <td><button>L</button></td>
+            <td><button id="A" onClick="makeGuess('A')">A</button></td>
+            <td><button id="S" onClick="makeGuess('S')">S</button></td>
+            <td><button id="D" onClick="makeGuess('D')">D</button></td>
+            <td><button id="F" onClick="makeGuess('F')">F</button></td>
+            <td><button id="G" onClick="makeGuess('G')">G</button></td>
+            <td><button id="H" onClick="makeGuess('H')">H</button></td>
+            <td><button id="J" onClick="makeGuess('J')">J</button></td>
+            <td><button id="K" onClick="makeGuess('K')">K</button></td>
+            <td><button id="L" onClick="makeGuess('L')">L</button></td>
         </tr>
     </table>
     <table style="margin-left: 203px">
         <tr>
-            <td><button>Z</button></td>
-            <td><button>X</button></td>
-            <td><button>C</button></td>
-            <td><button>V</button></td>
-            <td><button>B</button></td>
-            <td><button>N</button></td>
-            <td><button>M</button></td>
+            <td><button id="Z" onClick="makeGuess('Z')">Z</button></td>
+            <td><button id="X" onClick="makeGuess('X')">X</button></td>
+            <td><button id="C" onClick="makeGuess('C')">C</button></td>
+            <td><button id="V" onClick="makeGuess('V')">V</button></td>
+            <td><button id="B" onClick="makeGuess('B')">B</button></td>
+            <td><button id="N" onClick="makeGuess('N')">N</button></td>
+            <td><button id="M" onClick="makeGuess('M')">M</button></td>
         </tr>
     </table>
 
@@ -66,7 +80,9 @@
 </div>
 
 <script>
-    var animalWords = new Array("monkey", "bear", "dog", "cat", "hamster", "tiger", "lion", "horse", "cow", "peacock", "flamingo", "panther", "cheetah", "seal", "dolphin", "shark", "zebra", "giraffe", "elephant", "ostrich");
+    var correctWord;
+    var words = ["monkey", "bear", "dog", "cat", "hamster", "tiger", "lion", "horse", "cow", "peacock", "flamingo", "panther", "cheetah", "seal", "dolphin", "shark", "zebra", "giraffe", "elephant", "ostrich"];
+    var letterArray = new Array(correctWord.length);
 </script>
 
 </body>
