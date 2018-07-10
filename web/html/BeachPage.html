@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <title>Hangman | Animals</title>
+    <title>Hangman | Beach</title>
     <link rel="stylesheet" type="text/css" href="../css/BeachPage.css">
 
 </head>
@@ -20,9 +20,11 @@
         correctWord = words[codeNumber];
         letterArray = new Array(correctWord.length);
         for(var i = 0; i<correctWord.length; i++)
-            letterArray[i] = correctWord.charAt(i);
+            letterArray[i] = correctWord.charAt(i).toString();
 
     }
+
+    generateWord();
 
     function makeGuess(buttonId){
         console.log(buttonId);
@@ -33,13 +35,20 @@
     function checkAnswer(buttonId){
         var inWord = false;
         for (var i = 0; i<correctWord.length; i++){
-            if (letterArray[i] == buttonId)
+            if (letterArray[i]===buttonId.toLowerCase())
                 inWord = true;
         }
         return inWord;
     }
 
-    generateWord()
+    function setColor(buttonId) {
+        if (checkAnswer(buttonId)) {
+            document.getElementById(buttonId).style.backgroundColor = "#7CEC73";
+        }
+        else {
+            document.getElementById(buttonId).style.backgroundColor = "#ED6464";
+        }
+    }
 
 </script>
 
@@ -55,40 +64,40 @@
 
     <table style="margin-left: 100px">
         <tr>
-            <td><button id="Q" onClick="makeGuess('Q'); checkAnswer('Q')">Q</button></td>
-            <td><button id="W" onClick="makeGuess('W'); checkAnswer('W')">W</button></td>
-            <td><button id="E" onClick="makeGuess('E'); checkAnswer('E')">E</button></td>
-            <td><button id="R" onClick="makeGuess('R'); checkAnswer('R')">R</button></td>
-            <td><button id="T" onClick="makeGuess('T'); checkAnswer('T')">T</button></td>
-            <td><button id="Y" onClick="makeGuess('Y'); checkAnswer('Y')">Y</button></td>
-            <td><button id="U" onClick="makeGuess('U'); checkAnswer('U')">U</button></td>
-            <td><button id="I" onClick="makeGuess('I'); checkAnswer('I')">I</button></td>
-            <td><button id="O" onClick="makeGuess('O'); checkAnswer('O')">O</button></td>
-            <td><button id="P" onClick="makeGuess('P'); checkAnswer('P')">P</button></td>
+            <td><button id="Q" onClick="makeGuess('Q'); setColor('Q')">Q</button></td>
+            <td><button id="W" onClick="makeGuess('W'); setColor('W')">W</button></td>
+            <td><button id="E" onClick="makeGuess('E'); setColor('E')">E</button></td>
+            <td><button id="R" onClick="makeGuess('R'); setColor('R')">R</button></td>
+            <td><button id="T" onClick="makeGuess('T'); setColor('T')">T</button></td>
+            <td><button id="Y" onClick="makeGuess('Y'); setColor('Y')">Y</button></td>
+            <td><button id="U" onClick="makeGuess('U'); setColor('U')">U</button></td>
+            <td><button id="I" onClick="makeGuess('I'); setColor('I')">I</button></td>
+            <td><button id="O" onClick="makeGuess('O'); setColor('O')">O</button></td>
+            <td><button id="P" onClick="makeGuess('P'); setColor('P')">P</button></td>
         </tr>
     </table>
     <table style="margin-left: 130px">
         <tr>
-            <td><button id="A" onClick="makeGuess('A'); checkAnswer('A')">A</button></td>
-            <td><button id="S" onClick="makeGuess('S'); checkAnswer('S')">S</button></td>
-            <td><button id="D" onClick="makeGuess('D'); checkAnswer('D')">D</button></td>
-            <td><button id="F" onClick="makeGuess('F'); checkAnswer('F')">F</button></td>
-            <td><button id="G" onClick="makeGuess('G'); checkAnswer('G')">G</button></td>
-            <td><button id="H" onClick="makeGuess('H'); checkAnswer('H')">H</button></td>
-            <td><button id="J" onClick="makeGuess('J'); checkAnswer('J')">J</button></td>
-            <td><button id="K" onClick="makeGuess('K'); checkAnswer('K')">K</button></td>
-            <td><button id="L" onClick="makeGuess('L'); checkAnswer('L')">L</button></td>
+            <td><button id="A" onClick="makeGuess('A'); setColor('A')">A</button></td>
+            <td><button id="S" onClick="makeGuess('S'); setColor('S')">S</button></td>
+            <td><button id="D" onClick="makeGuess('D'); setColor('D')">D</button></td>
+            <td><button id="F" onClick="makeGuess('F'); setColor('F')">F</button></td>
+            <td><button id="G" onClick="makeGuess('G'); setColor('G')">G</button></td>
+            <td><button id="H" onClick="makeGuess('H'); setColor('H')">H</button></td>
+            <td><button id="J" onClick="makeGuess('J'); setColor('J')">J</button></td>
+            <td><button id="K" onClick="makeGuess('K'); setColor('K')">K</button></td>
+            <td><button id="L" onClick="makeGuess('L'); setColor('L')">L</button></td>
         </tr>
     </table>
     <table style="margin-left: 203px">
         <tr>
-            <td><button id="Z" onClick="makeGuess('Z'); checkAnswer('Z')">Z</button></td>
-            <td><button id="X" onClick="makeGuess('X'); checkAnswer('X')">X</button></td>
-            <td><button id="C" onClick="makeGuess('C'); checkAnswer('C')">C</button></td>
-            <td><button id="V" onClick="makeGuess('V'); checkAnswer('V')">V</button></td>
-            <td><button id="B" onClick="makeGuess('B'); checkAnswer('B')">B</button></td>
-            <td><button id="N" onClick="makeGuess('N'); checkAnswer('N')">N</button></td>
-            <td><button id="M" onClick="makeGuess('M'); checkAnswer('M')">M</button></td>
+            <td><button id="Z" onClick="makeGuess('Z'); setColor('Z')">Z</button></td>
+            <td><button id="X" onClick="makeGuess('X'); setColor('X')">X</button></td>
+            <td><button id="C" onClick="makeGuess('C'); setColor('C')">C</button></td>
+            <td><button id="V" onClick="makeGuess('V'); setColor('V')">V</button></td>
+            <td><button id="B" onClick="makeGuess('B'); setColor('B')">B</button></td>
+            <td><button id="N" onClick="makeGuess('N'); setColor('N')">N</button></td>
+            <td><button id="M" onClick="makeGuess('M'); setColor('M')">M</button></td>
         </tr>
     </table>
 
