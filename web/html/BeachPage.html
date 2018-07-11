@@ -61,8 +61,15 @@
 
 <table id="dashes">
     <script>
-        for (var i = 0; i < correctWord.length; i++) {
-            document.write('<td><span id = "indvletters">' + "_ " + '</span></td>');
+        if (correctWord.length<=7) {
+            for (var i = 0; i < correctWord.length; i++) {
+                document.write('<td><span id = "indvletters">' + "_ " + '</span></td>');
+            }
+        }
+        else {
+            for (var x = 0; x<correctWord.length; x++) {
+                document.write('<td><span id = "longWord">' + "_ " + '</span></td>')
+            }
         }
     </script>
 </table>

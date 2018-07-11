@@ -36,6 +36,7 @@ button{
     position: absolute;
     bottom: -25px;
     right: -385px;
+    font-weight: bold;
 }
 
 button:hover{
@@ -48,13 +49,18 @@ button:hover{
 }
 
 #dashes{
-    font-size: 170px;
     font-family: "Nanum Pen Script", sans-serif;
     position: absolute;
-    top: 250px;
-    left: 300px;
+    bottom: 500px;
+    left: 140px;
 }
 
 #indvletters{
     margin: 20px;
+    font-size: 170px;
+}
+
+#longWord{
+    margin: 4px;
+    font-size: 155px;
 }
