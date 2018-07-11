@@ -6,6 +6,7 @@ div{
     bottom: 20px;
     left: 20px;
 }
+
 button{
     font-size: 40px;
     font-family: "Nanum Pen Script", sans-serif;
@@ -13,7 +14,7 @@ button{
     height:50px;
     width:50px;
     border-radius: 8px;
-    /*border: 0px solid #000000  ;*/
+    /*border: 0px solid #000000;*/
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 #hanger{
@@ -23,19 +24,30 @@ button{
 }
 
 #guesses{
-    font-family: "Nanum Pen Script", sans-serif;
+    font-family: 'Nanum Pen Script', sans-serif;
     font-size: 50px;
     position: absolute;
     bottom: -20px;
     right: -350px;
 }
+
+#numGuesses{
+    font-family: 'Nanum Pen Script', sans-serif;
+    font-size: 55px;
+    position: absolute;
+    bottom: -25px;
+    right: -375px;
+}
+
 button:hover{
-    background: #baa491;
+    background: rgb(185, 187, 217);
     transform: scale(1.5);
 }
+
 :disabled{
     pointer-events: none;
 }
+
 #dashes{
     font-size: 170px;
     font-family: "Nanum Pen Script", sans-serif;
@@ -43,6 +55,7 @@ button:hover{
     top: 250px;
     left: 300px;
 }
+
 #indvletters{
     margin: 20px;
 }

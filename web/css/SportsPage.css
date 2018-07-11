@@ -29,13 +29,24 @@ button{
     bottom: -20px;
     right: -350px;
 }
+
+#numGuesses{
+    font-family: 'Nanum Pen Script', sans-serif;
+    font-size: 55px;
+    position: absolute;
+    bottom: -25px;
+    right: -375px;
+}
+
 button:hover{
     background: rgb(185, 187, 217);
     transform: scale(1.5);
 }
+
 :disabled{
     pointer-events: none;
 }
+
 #dashes{
     font-size: 170px;
     font-family: "Nanum Pen Script", sans-serif;
@@ -43,6 +54,7 @@ button:hover{
     top: 250px;
     left: 300px;
 }
+
 #indvletters{
     margin: 20px;
 }
