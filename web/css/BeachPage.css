@@ -1,6 +1,7 @@
 body{
     background-image: url("../images/beachpic.png");
 }
+
 div{
     position:absolute;
     bottom: 20px;
@@ -53,7 +54,7 @@ button:hover{
     font-family: "Nanum Pen Script", sans-serif;
     position: absolute;
     bottom: 500px;
-    left: 135px;
+    left: 140px;
 }
 
 #indvletters{
@@ -62,6 +63,23 @@ button:hover{
 }
 
 #longWord{
-    margin: 4px;
+    margin: 3px;
     font-size: 155px;
+}
+
+#writtenLetters{
+    font-family: "Monaco", sans-serif;
+    font-size: 105px;
+    position: absolute;
+    bottom: 425px;
+    left: 170px;
+}
+
+#longWrittenLetters{
+    font-family: "Monaco", sans-serif;
+    font-size: 104px; /*was 135px*/
+    letter-spacing: 22px;
+    position: absolute;
+    bottom: 425px;
+    left: 150px;
 }

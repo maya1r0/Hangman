@@ -12,17 +12,23 @@
 
 <script>
 
-    var words = ["monkey", "bear", "dog", "cat", "hamster", "tiger", "lion", "horse", "cow", "peacock", "flamingo", "panther", "cheetah", "seal", "dolphin", "shark", "zebra", "giraffe", "elephant", "ostrich", "moose", "alpaca", "eagle", "spider", "jellyfish", "narwhal", "hyena", "meerkat", "baboon", "whale", "rhinocaurus", "puffin", "penguin", "frog"];
+    var words = ["monkey", "bear", "dog", "cat", "hamster", "tiger", "lion", "horse", "cow", "peacock", "flamingo", "panther", "cheetah", "seal", "dolphin", "shark", "zebra", "giraffe", "elephant", "ostrich", "moose", "alpaca", "eagle", "spider", "jellyfish", "narwhal", "hyena", "meerkat", "baboon", "whale", "rhinoceros", "puffin", "penguin", "frog"];
     var correctWord;
     var letterArray;
     var guessesLeft = 8;
+    var arrayToFill;
 
     function generateWord(){
         var codeNumber = Math.floor(Math.random()*Math.floor(words.length));
         correctWord = words[codeNumber];
         letterArray = new Array(correctWord.length);
-        for(var i = 0; i<correctWord.length; i++)
+        for(var i = 0; i<correctWord.length; i++) {
             letterArray[i] = correctWord.charAt(i);
+        }
+        arrayToFill = [];
+        for(var i = 0; i<correctWord.length; i++){
+            arrayToFill[i] = " ";
+        }
     }
 
     function makeGuess(buttonId){
@@ -55,6 +61,20 @@
         }
         document.getElementById("numGuesses").innerHTML = guessesLeft.toString();
     }
+
+    function writeLetters(buttonId){
+        if(checkAnswer(buttonId)){
+            for (var i = 0; i<correctWord.length; i++){
+                if (letterArray[i]===buttonId.toLowerCase())
+                    arrayToFill[i] = buttonId;
+            }
+        }
+        if (correctWord.length<8)
+            document.getElementById("writtenLetters").innerHTML = arrayToFill.join(" ").toString();
+        else
+            document.getElementById("longWrittenLetters").innerHTML = arrayToFill.join("").toString();
+    }
+
     function loser() {
         if (guessesLeft == 0) {
             window.alert("You Lost! :(");
@@ -66,6 +86,8 @@
 
 </script>
 
+<pre id = "writtenLetters"> </pre>
+<pre id = "longWrittenLetters"> </pre>
 <table id="dashes">
     <script>
         if (correctWord.length<=7) {
@@ -81,45 +103,45 @@
     </script>
 </table>
 
-<a href="Homepage.html"><button style = "background-image:url(../images/houseicon.jpg)"></button></a>
+<a href="Homepage.html"><button style = "background-image:url(../images/homeicon.png)"></button></a>
 <div>
 
     <table style="margin-left: 100px">
         <tr>
-            <td><button id="Q" onClick="makeGuess('Q'); setColor('Q'); writeGuesses('Q'); loser()">Q</button></td>
-            <td><button id="W" onClick="makeGuess('W'); setColor('W'); writeGuesses('W'); loser()">W</button></td>
-            <td><button id="E" onClick="makeGuess('E'); setColor('E'); writeGuesses('E'); loser()">E</button></td>
-            <td><button id="R" onClick="makeGuess('R'); setColor('R'); writeGuesses('R'); loser()">R</button></td>
-            <td><button id="T" onClick="makeGuess('T'); setColor('T'); writeGuesses('T');loser()">T</button></td>
-            <td><button id="Y" onClick="makeGuess('Y'); setColor('Y'); writeGuesses('Y'); loser()">Y</button></td>
-            <td><button id="U" onClick="makeGuess('U'); setColor('U'); writeGuesses('U'); loser()">U</button></td>
-            <td><button id="I" onClick="makeGuess('I'); setColor('I'); writeGuesses('I'); loser()">I</button></td>
-            <td><button id="O" onClick="makeGuess('O'); setColor('O'); writeGuesses('O'); loser()">O</button></td>
-            <td><button id="P" onClick="makeGuess('P'); setColor('P'); writeGuesses('P');loser()">P</button></td>
+            <td><button id="Q" onClick="makeGuess('Q'); setColor('Q'); writeGuesses('Q'); writeLetters('Q'); loser()">Q</button></td>
+            <td><button id="W" onClick="makeGuess('W'); setColor('W'); writeGuesses('W'); writeLetters('W'); loser()">W</button></td>
+            <td><button id="E" onClick="makeGuess('E'); setColor('E'); writeGuesses('E'); writeLetters('E'); loser()">E</button></td>
+            <td><button id="R" onClick="makeGuess('R'); setColor('R'); writeGuesses('R'); writeLetters('R'); loser()">R</button></td>
+            <td><button id="T" onClick="makeGuess('T'); setColor('T'); writeGuesses('T'); writeLetters('T'); loser()">T</button></td>
+            <td><button id="Y" onClick="makeGuess('Y'); setColor('Y'); writeGuesses('Y'); writeLetters('Y'); loser()">Y</button></td>
+            <td><button id="U" onClick="makeGuess('U'); setColor('U'); writeGuesses('U'); writeLetters('U'); loser()">U</button></td>
+            <td><button id="I" onClick="makeGuess('I'); setColor('I'); writeGuesses('I'); writeLetters('I'); loser()">I</button></td>
+            <td><button id="O" onClick="makeGuess('O'); setColor('O'); writeGuesses('O'); writeLetters('O'); loser()">O</button></td>
+            <td><button id="P" onClick="makeGuess('P'); setColor('P'); writeGuesses('P'); writeLetters('P'); loser()">P</button></td>
         </tr>
     </table>
     <table style="margin-left: 130px">
         <tr>
-            <td><button id="A" onClick="makeGuess('A'); setColor('A'); writeGuesses('A'); loser()">A</button></td>
-            <td><button id="S" onClick="makeGuess('S'); setColor('S'); writeGuesses('S');loser()">S</button></td>
-            <td><button id="D" onClick="makeGuess('D'); setColor('D'); writeGuesses('D'); loser()">D</button></td>
-            <td><button id="F" onClick="makeGuess('F'); setColor('F'); writeGuesses('F'); loser()">F</button></td>
-            <td><button id="G" onClick="makeGuess('G'); setColor('G'); writeGuesses('G'); loser()">G</button></td>
-            <td><button id="H" onClick="makeGuess('H'); setColor('H'); writeGuesses('H'); loser()">H</button></td>
-            <td><button id="J" onClick="makeGuess('J'); setColor('J'); writeGuesses('J'); loser()">J</button></td>
-            <td><button id="K" onClick="makeGuess('K'); setColor('K'); writeGuesses('K'); loser()">K</button></td>
-            <td><button id="L" onClick="makeGuess('L'); setColor('L'); writeGuesses('L'); loser()">L</button></td>
+            <td><button id="A" onClick="makeGuess('A'); setColor('A'); writeGuesses('A'); writeLetters('A'); loser()">A</button></td>
+            <td><button id="S" onClick="makeGuess('S'); setColor('S'); writeGuesses('S'); writeLetters('S'); loser()">S</button></td>
+            <td><button id="D" onClick="makeGuess('D'); setColor('D'); writeGuesses('D'); writeLetters('D'); loser()">D</button></td>
+            <td><button id="F" onClick="makeGuess('F'); setColor('F'); writeGuesses('F'); writeLetters('F'); loser()">F</button></td>
+            <td><button id="G" onClick="makeGuess('G'); setColor('G'); writeGuesses('G'); writeLetters('G'); loser()">G</button></td>
+            <td><button id="H" onClick="makeGuess('H'); setColor('H'); writeGuesses('H'); writeLetters('H'); loser()">H</button></td>
+            <td><button id="J" onClick="makeGuess('J'); setColor('J'); writeGuesses('J'); writeLetters('J'); loser()">J</button></td>
+            <td><button id="K" onClick="makeGuess('K'); setColor('K'); writeGuesses('K'); writeLetters('K'); loser()">K</button></td>
+            <td><button id="L" onClick="makeGuess('L'); setColor('L'); writeGuesses('L'); writeLetters('L'); loser()">L</button></td>
         </tr>
     </table>
     <table style="margin-left: 203px">
         <tr>
-            <td><button id="Z" onClick="makeGuess('Z'); setColor('Z'); writeGuesses('Z'); loser()">Z</button></td>
-            <td><button id="X" onClick="makeGuess('X'); setColor('X'); writeGuesses('X'); loser()">X</button></td>
-            <td><button id="C" onClick="makeGuess('C'); setColor('C'); writeGuesses('C'); loser()">C</button></td>
-            <td><button id="V" onClick="makeGuess('V'); setColor('V'); writeGuesses('V'); loser()">V</button></td>
-            <td><button id="B" onClick="makeGuess('B'); setColor('B'); writeGuesses('B'); loser()">B</button></td>
-            <td><button id="N" onClick="makeGuess('N'); setColor('N'); writeGuesses('N'); loser()">N</button></td>
-            <td><button id="M" onClick="makeGuess('M'); setColor('M'); writeGuesses('M'); loser()">M</button></td>
+            <td><button id="Z" onClick="makeGuess('Z'); setColor('Z'); writeGuesses('Z'); writeLetters('Z');  loser()">Z</button></td>
+            <td><button id="X" onClick="makeGuess('X'); setColor('X'); writeGuesses('X'); writeLetters('X');  loser()">X</button></td>
+            <td><button id="C" onClick="makeGuess('C'); setColor('C'); writeGuesses('C'); writeLetters('C');  loser()">C</button></td>
+            <td><button id="V" onClick="makeGuess('V'); setColor('V'); writeGuesses('V'); writeLetters('V');  loser()">V</button></td>
+            <td><button id="B" onClick="makeGuess('B'); setColor('B'); writeGuesses('B'); writeLetters('B');  loser()">B</button></td>
+            <td><button id="N" onClick="makeGuess('N'); setColor('N'); writeGuesses('N'); writeLetters('N');  loser()">N</button></td>
+            <td><button id="M" onClick="makeGuess('M'); setColor('M'); writeGuesses('M'); writeLetters('M');  loser()">M</button></td>
         </tr>
     </table>
 
