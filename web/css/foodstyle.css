@@ -84,6 +84,10 @@ button:hover{
     left: 150px;
 }
 
+#manPicture{
+    zoom: 38%;
+}
+
 #loser{
     position:relative;
     display: block;
