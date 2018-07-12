@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:style="http://www.w3.org/1999/xhtml">
 <head>
 
     <title>Hangman | Sports</title>
@@ -12,41 +12,43 @@
 <script>
 
     var words = ["soccer", "volleyball", "basketball", "football", "lacrosse", "swimming", "tennis", "softball", "baseball", "gymnastics", "rugby", "diving", "archery", "boxing", "climbing", "golf", "hockey", "fencing", "badminton", "field", "court", "net", "ball", "touchdown", "jersey", "goal", "basket", "game", "match"];
+    var keyboardIds = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     var correctWord;
     var letterArray;
     var guessesLeft = 8;
     var arrayToFill;
 
-    function generateWord(){
-        var codeNumber = Math.floor(Math.random()*Math.floor(words.length));
+    function generateWord() {
+        var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
         correctWord = words[codeNumber];
+        console.log(correctWord);
         letterArray = new Array(correctWord.length);
-        for(var i = 0; i<correctWord.length; i++) {
+        for (var i = 0; i < correctWord.length; i++) {
             letterArray[i] = correctWord.charAt(i);
         }
         arrayToFill = [];
-        for(var i = 0; i<correctWord.length; i++){
+        for (var i = 0; i < correctWord.length; i++) {
             arrayToFill[i] = " ";
         }
     }
 
-    function makeGuess(buttonId){
+    function makeGuess(buttonId) {
         console.log(buttonId);
         var element = document.getElementById(buttonId);
         element.disabled = true;
     }
 
-    function checkAnswer(buttonId){
+    function checkAnswer(buttonId) {
         var inWord = false;
-        for (var i = 0; i<correctWord.length; i++){
-            if (letterArray[i]===buttonId.toLowerCase())
+        for (var i = 0; i < correctWord.length; i++) {
+            if (letterArray[i] === buttonId.toLowerCase())
                 inWord = true;
         }
         return inWord;
     }
 
-    function setColor(buttonId){
-        if (checkAnswer(buttonId)){
+    function setColor(buttonId) {
+        if (checkAnswer(buttonId)) {
             document.getElementById(buttonId).style.backgroundColor = "#7CEC73";
         }
         else {
@@ -54,28 +56,40 @@
         }
     }
 
-    function writeGuesses(buttonId){
-        if(!checkAnswer(buttonId)){
+    function writeGuesses(buttonId) {
+        if (!checkAnswer(buttonId)) {
             guessesLeft--;
         }
         document.getElementById("numGuesses").innerHTML = guessesLeft.toString();
     }
+
+    function disableKeyboard() {
+        keyboardIds.forEach(l =>
+        document.getElementById(l).disabled = true
+    )}
+
+    var img = "../images/winner.png";
+    var firstImg = "../images/Snooze_You_Lose.png";
+
     function loser() {
-        if (guessesLeft == 0) {
-            window.alert("You Lost! :(");
+        if (guessesLeft === 0) {
+            document.getElementById("loser").src = firstImg.toString();
+            disableKeyboard();
         }
-        else
-            widow.alert("You won!");
+        if (arrayToFill.indexOf(" ") === -1) {
+            document.getElementById("winner").src = img.toString();
+            disableKeyboard();
+        }
     }
 
-    function writeLetters(buttonId){
-        if(checkAnswer(buttonId)){
-            for (var i = 0; i<correctWord.length; i++){
-                if (letterArray[i]===buttonId.toLowerCase())
+    function writeLetters(buttonId) {
+        if (checkAnswer(buttonId)) {
+            for (var i = 0; i < correctWord.length; i++) {
+                if (letterArray[i] === buttonId.toLowerCase())
                     arrayToFill[i] = buttonId;
             }
         }
-        if (correctWord.length<8)
+        if (correctWord.length < 8)
             document.getElementById("writtenLetters").innerHTML = arrayToFill.join(" ").toString();
         else
             document.getElementById("longWrittenLetters").innerHTML = arrayToFill.join("").toString();
@@ -85,72 +99,181 @@
 
 </script>
 
-<pre id = "writtenLetters"> </pre>
-<pre id = "longWrittenLetters"> </pre>
+<pre id="writtenLetters"> </pre>
+<pre id="longWrittenLetters"> </pre>
 <table id="dashes">
     <script>
-        if (correctWord.length<=7) {
+        if (correctWord.length <= 7) {
             for (var i = 0; i < correctWord.length; i++) {
                 document.write('<td><span id = "indvletters">' + "_ " + '</span></td>');
             }
         }
         else {
-            for (var x = 0; x<correctWord.length; x++) {
+            for (var x = 0; x < correctWord.length; x++) {
                 document.write('<td><span id = "longWord">' + "_ " + '</span></td>')
             }
         }
     </script>
 </table>
-
-<a href="Homepage.html"><button style = "background-image:url(../images/homeicon.png)"></button></a>
+<img src="" id="winner">
+<img src="" id="loser">
+<a href="Homepage.html">
+    <button style="background-image:url(../images/homeicon.png)"></button>
+</a>
 
 <div>
 
     <table style="margin-left: 100px">
         <tr>
-            <td><button id="Q" onClick="makeGuess('Q'); setColor('Q'); writeGuesses('Q'); writeLetters('Q'); loser()">Q</button></td>
-            <td><button id="W" onClick="makeGuess('W'); setColor('W'); writeGuesses('W'); writeLetters('W'); loser()">W</button></td>
-            <td><button id="E" onClick="makeGuess('E'); setColor('E'); writeGuesses('E'); writeLetters('E'); loser()">E</button></td>
-            <td><button id="R" onClick="makeGuess('R'); setColor('R'); writeGuesses('R'); writeLetters('R'); loser()">R</button></td>
-            <td><button id="T" onClick="makeGuess('T'); setColor('T'); writeGuesses('T'); writeLetters('T'); loser()">T</button></td>
-            <td><button id="Y" onClick="makeGuess('Y'); setColor('Y'); writeGuesses('Y'); writeLetters('Y'); loser()">Y</button></td>
-            <td><button id="U" onClick="makeGuess('U'); setColor('U'); writeGuesses('U'); writeLetters('U'); loser()">U</button></td>
-            <td><button id="I" onClick="makeGuess('I'); setColor('I'); writeGuesses('I'); writeLetters('I'); loser()">I</button></td>
-            <td><button id="O" onClick="makeGuess('O'); setColor('O'); writeGuesses('O'); writeLetters('O'); loser()">O</button></td>
-            <td><button id="P" onClick="makeGuess('P'); setColor('P'); writeGuesses('P'); writeLetters('P'); loser()">P</button></td>
+            <td>
+                <button id="Q" onClick="makeGuess('Q'); setColor('Q'); writeGuesses('Q'); writeLetters('Q'); loser()">
+                    Q
+                </button>
+            </td>
+            <td>
+                <button id="W" onClick="makeGuess('W'); setColor('W'); writeGuesses('W'); writeLetters('W'); loser()">
+                    W
+                </button>
+            </td>
+            <td>
+                <button id="E" onClick="makeGuess('E'); setColor('E'); writeGuesses('E'); writeLetters('E'); loser()">
+                    E
+                </button>
+            </td>
+            <td>
+                <button id="R" onClick="makeGuess('R'); setColor('R'); writeGuesses('R'); writeLetters('R'); loser()">
+                    R
+                </button>
+            </td>
+            <td>
+                <button id="T" onClick="makeGuess('T'); setColor('T'); writeGuesses('T'); writeLetters('T'); loser()">
+                    T
+                </button>
+            </td>
+            <td>
+                <button id="Y" onClick="makeGuess('Y'); setColor('Y'); writeGuesses('Y'); writeLetters('Y'); loser()">
+                    Y
+                </button>
+            </td>
+            <td>
+                <button id="U" onClick="makeGuess('U'); setColor('U'); writeGuesses('U'); writeLetters('U'); loser()">
+                    U
+                </button>
+            </td>
+            <td>
+                <button id="I" onClick="makeGuess('I'); setColor('I'); writeGuesses('I'); writeLetters('I'); loser()">
+                    I
+                </button>
+            </td>
+            <td>
+                <button id="O" onClick="makeGuess('O'); setColor('O'); writeGuesses('O'); writeLetters('O'); loser()">
+                    O
+                </button>
+            </td>
+            <td>
+                <button id="P" onClick="makeGuess('P'); setColor('P'); writeGuesses('P'); writeLetters('P'); loser()">
+                    P
+                </button>
+            </td>
         </tr>
     </table>
     <table style="margin-left: 130px">
         <tr>
-            <td><button id="A" onClick="makeGuess('A'); setColor('A'); writeGuesses('A'); writeLetters('A'); loser()">A</button></td>
-            <td><button id="S" onClick="makeGuess('S'); setColor('S'); writeGuesses('S'); writeLetters('S'); loser()">S</button></td>
-            <td><button id="D" onClick="makeGuess('D'); setColor('D'); writeGuesses('D'); writeLetters('D'); loser()">D</button></td>
-            <td><button id="F" onClick="makeGuess('F'); setColor('F'); writeGuesses('F'); writeLetters('F'); loser()">F</button></td>
-            <td><button id="G" onClick="makeGuess('G'); setColor('G'); writeGuesses('G'); writeLetters('G'); loser()">G</button></td>
-            <td><button id="H" onClick="makeGuess('H'); setColor('H'); writeGuesses('H'); writeLetters('H'); loser()">H</button></td>
-            <td><button id="J" onClick="makeGuess('J'); setColor('J'); writeGuesses('J'); writeLetters('J'); loser()">J</button></td>
-            <td><button id="K" onClick="makeGuess('K'); setColor('K'); writeGuesses('K'); writeLetters('K'); loser()">K</button></td>
-            <td><button id="L" onClick="makeGuess('L'); setColor('L'); writeGuesses('L'); writeLetters('L'); loser()">L</button></td>
+            <td>
+                <button id="A" onClick="makeGuess('A'); setColor('A'); writeGuesses('A'); writeLetters('A'); loser()">
+                    A
+                </button>
+            </td>
+            <td>
+                <button id="S" onClick="makeGuess('S'); setColor('S'); writeGuesses('S'); writeLetters('S'); loser()">
+                    S
+                </button>
+            </td>
+            <td>
+                <button id="D" onClick="makeGuess('D'); setColor('D'); writeGuesses('D'); writeLetters('D'); loser()">
+                    D
+                </button>
+            </td>
+            <td>
+                <button id="F" onClick="makeGuess('F'); setColor('F'); writeGuesses('F'); writeLetters('F'); loser()">
+                    F
+                </button>
+            </td>
+            <td>
+                <button id="G" onClick="makeGuess('G'); setColor('G'); writeGuesses('G'); writeLetters('G'); loser()">
+                    G
+                </button>
+            </td>
+            <td>
+                <button id="H" onClick="makeGuess('H'); setColor('H'); writeGuesses('H'); writeLetters('H'); loser()">
+                    H
+                </button>
+            </td>
+            <td>
+                <button id="J" onClick="makeGuess('J'); setColor('J'); writeGuesses('J'); writeLetters('J'); loser()">
+                    J
+                </button>
+            </td>
+            <td>
+                <button id="K" onClick="makeGuess('K'); setColor('K'); writeGuesses('K'); writeLetters('K'); loser()">
+                    K
+                </button>
+            </td>
+            <td>
+                <button id="L" onClick="makeGuess('L'); setColor('L'); writeGuesses('L'); writeLetters('L'); loser()">
+                    L
+                </button>
+            </td>
         </tr>
     </table>
     <table style="margin-left: 203px">
         <tr>
-            <td><button id="Z" onClick="makeGuess('Z'); setColor('Z'); writeGuesses('Z'); writeLetters('Z'); loser()">Z</button></td>
-            <td><button id="X" onClick="makeGuess('X'); setColor('X'); writeGuesses('X'); writeLetters('X'); loser()">X</button></td>
-            <td><button id="C" onClick="makeGuess('C'); setColor('C'); writeGuesses('C'); writeLetters('C'); loser()">C</button></td>
-            <td><button id="V" onClick="makeGuess('V'); setColor('V'); writeGuesses('V'); writeLetters('V'); loser()">V</button></td>
-            <td><button id="B" onClick="makeGuess('B'); setColor('B'); writeGuesses('B'); writeLetters('B'); loser()">B</button></td>
-            <td><button id="N" onClick="makeGuess('N'); setColor('N'); writeGuesses('N'); writeLetters('N'); loser()">N</button></td>
-            <td><button id="M" onClick="makeGuess('M'); setColor('M'); writeGuesses('M'); writeLetters('M'); loser()">M</button></td>
+            <td>
+                <button id="Z" onClick="makeGuess('Z'); setColor('Z'); writeGuesses('Z'); writeLetters('Z'); loser()">
+                    Z
+                </button>
+            </td>
+            <td>
+                <button id="X" onClick="makeGuess('X'); setColor('X'); writeGuesses('X'); writeLetters('X'); loser()">
+                    X
+                </button>
+            </td>
+            <td>
+                <button id="C" onClick="makeGuess('C'); setColor('C'); writeGuesses('C'); writeLetters('C'); loser()">
+                    C
+                </button>
+            </td>
+            <td>
+                <button id="V" onClick="makeGuess('V'); setColor('V'); writeGuesses('V'); writeLetters('V'); loser()">
+                    V
+                </button>
+            </td>
+            <td>
+                <button id="B" onClick="makeGuess('B'); setColor('B'); writeGuesses('B'); writeLetters('B'); loser()">
+                    B
+                </button>
+            </td>
+            <td>
+                <button id="N" onClick="makeGuess('N'); setColor('N'); writeGuesses('N'); writeLetters('N'); loser()">
+                    N
+                </button>
+            </td>
+            <td>
+                <button id="M" onClick="makeGuess('M'); setColor('M'); writeGuesses('M'); writeLetters('M'); loser()">
+                    M
+                </button>
+            </td>
         </tr>
     </table>
 
-    <img src="../images/hanger.png" id="hanger" style="width: 500px; height: 600px; margin-top: 100px; margin-left: 50px"/>
+    <img src="../images/hanger.png" id="hanger"
+         style="width: 500px; height: 600px; margin-top: 100px; margin-left: 50px"/>
 
-    <p id = "guesses"><b>Guesses Left: </b></p>
-    <p id = "numGuesses">8</p>
-
+    <p id="guesses"><b>Guesses Left: </b></p>
+    <p id="numGuesses">8</p>
 </div>
 
+
+</p>
 </body>
 </html>
