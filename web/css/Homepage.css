@@ -25,15 +25,3 @@ span{
     font-size: 100px;
     color: #bc1945;
 }
-/*commented out because the reference to relpos and hangman pic in Homepage.html are commented out
-/*relpos{
-    position: relative;
-    top: -100px;
-    left: -50px;
-}
-
-hangmanpic{
-    position: absolute;
-    left: 50%;
-    top: 20%;
-}*/

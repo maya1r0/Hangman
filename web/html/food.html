@@ -12,41 +12,42 @@
 <script>
 
     var words = ["fettuccini", "taco", "hamburger", "steak", "potato", "apple", "spinach", "salad", "cheese", "vegetables", "zucchini", "papaya", "brownie", "shrimp", "salmon", "sushi", "cookie", "milk", "juice", "almond", "salami", "asparagus", "quinoa", "kiwi", "tomato", "peanut", "tofu", "sandwich"];
+    var keyboardIds = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     var correctWord;
     var letterArray;
     var guessesLeft = 8;
     var arrayToFill;
 
-    function generateWord(){
-        var codeNumber = Math.floor(Math.random()*Math.floor(words.length));
+    function generateWord() {
+        var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
         correctWord = words[codeNumber];
         letterArray = new Array(correctWord.length);
-        for(var i = 0; i<correctWord.length; i++) {
+        for (var i = 0; i < correctWord.length; i++) {
             letterArray[i] = correctWord.charAt(i);
         }
         arrayToFill = [];
-        for(var i = 0; i<correctWord.length; i++){
+        for (var i = 0; i < correctWord.length; i++) {
             arrayToFill[i] = " ";
         }
     }
 
-    function makeGuess(buttonId){
+    function makeGuess(buttonId) {
         console.log(buttonId);
         var element = document.getElementById(buttonId);
         element.disabled = true;
     }
 
-    function checkAnswer(buttonId){
+    function checkAnswer(buttonId) {
         var inWord = false;
-        for (var i = 0; i<correctWord.length; i++){
-            if (letterArray[i]===buttonId.toLowerCase())
+        for (var i = 0; i < correctWord.length; i++) {
+            if (letterArray[i] === buttonId.toLowerCase())
                 inWord = true;
         }
         return inWord;
     }
 
-    function setColor(buttonId){
-        if (checkAnswer(buttonId)){
+    function setColor(buttonId) {
+        if (checkAnswer(buttonId)) {
             document.getElementById(buttonId).style.backgroundColor = "#7CEC73";
         }
         else {
@@ -54,55 +55,70 @@
         }
     }
 
-    function writeGuesses(buttonId){
-        if(!checkAnswer(buttonId)){
+    function writeGuesses(buttonId) {
+        if (!checkAnswer(buttonId)) {
             guessesLeft--;
         }
         document.getElementById("numGuesses").innerHTML = guessesLeft.toString();
     }
 
-    function writeLetters(buttonId){
-        if(checkAnswer(buttonId)){
-            for (var i = 0; i<correctWord.length; i++){
-                if (letterArray[i]===buttonId.toLowerCase())
+    function disableKeyboard() {
+        keyboardIds.forEach(l =>
+        document.getElementById(l).disabled = true
+    )}
+
+    var img = "../images/winner.png";
+    var firstImg = "../images/Snooze_You_Lose.png";
+
+    function loser() {
+        if (guessesLeft === 0) {
+            document.getElementById("loser").src = firstImg.toString();
+            disableKeyboard();
+        }
+        if (arrayToFill.indexOf(" ") === -1) {
+            document.getElementById("winner").src = img.toString();
+            disableKeyboard();
+        }
+    }
+
+    function writeLetters(buttonId) {
+        if (checkAnswer(buttonId)) {
+            for (var i = 0; i < correctWord.length; i++) {
+                if (letterArray[i] === buttonId.toLowerCase())
                     arrayToFill[i] = buttonId;
             }
         }
-        if (correctWord.length<8)
+        if (correctWord.length < 8)
             document.getElementById("writtenLetters").innerHTML = arrayToFill.join(" ").toString();
         else
             document.getElementById("longWrittenLetters").innerHTML = arrayToFill.join("").toString();
     }
 
-    function loser() {
-        if (guessesLeft == 0) {
-            window.alert("You Lost! :(");
-        }
-        else
-            widow.alert("You won!");
-    }
     generateWord();
 
 </script>
 
-<pre id = "writtenLetters"> </pre>
-<pre id = "longWrittenLetters"> </pre>
+<pre id="writtenLetters"> </pre>
+<pre id="longWrittenLetters"> </pre>
 <table id="dashes">
     <script>
-        if (correctWord.length<=7) {
+        if (correctWord.length <= 7) {
             for (var i = 0; i < correctWord.length; i++) {
                 document.write('<td><span id = "indvletters">' + "_ " + '</span></td>');
             }
         }
         else {
-            for (var x = 0; x<correctWord.length; x++) {
+            for (var x = 0; x < correctWord.length; x++) {
                 document.write('<td><span id = "longWord">' + "_ " + '</span></td>')
             }
         }
     </script>
 </table>
-
-<a href="Homepage.html"><button style = "background-image:url(../images/homeicon.png)"></button></a>
+<img src="" id="winner">
+<img src="" id="loser">
+<a href="Homepage.html">
+    <button style="background-image:url(../images/homeicon.png)"></button>
+</a>
 
 <div>
 
@@ -145,12 +161,14 @@
         </tr>
     </table>
 
-    <img src="../images/hanger.png" id="hanger" style="width: 500px; height: 600px; margin-top: 100px; margin-left: 50px"/>
+    <img src="../images/hanger.png" id="hanger"
+         style="width: 500px; height: 600px; margin-top: 100px; margin-left: 50px"/>
 
-    <p id = "guesses"><b>Guesses Left: </b></p>
-    <p id = "numGuesses">8</p>
-
+    <p id="guesses"><b>Guesses Left: </b></p>
+    <p id="numGuesses">8</p>
 </div>
 
+
+</p>
 </body>
 </html>
