@@ -83,6 +83,7 @@ button:hover{
     bottom: 425px;
     left: 150px;
 }
+
 #loser{
     position:relative;
     display: block;
@@ -91,6 +92,7 @@ button:hover{
     width: 50%;
     z-index: 1;
 }
+
 #winner{
     position:relative;
     display: block;
