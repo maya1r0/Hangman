@@ -2,6 +2,12 @@ body{
     background-image: url("../images/AnimalPic1.png");
 }
 
+.mainWrap
+{
+    min-width:1600px;
+    height:1000px;
+
+}
 div{
     position:absolute;
     bottom: 20px;

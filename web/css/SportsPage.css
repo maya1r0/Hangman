@@ -1,11 +1,20 @@
-body{
+body
+{
     background-image: url("../images/sportbackground.png");
-}
 
+    background-size:100%;
+
+}
+.mainWrap
+{
+    min-width:1600px;
+    height:1000px;
+
+}
 div{
     position:absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 5%;
+
 }
 
 button{

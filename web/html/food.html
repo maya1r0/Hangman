@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+<div class="mainWrap">
 <script>
 
     var words = ["fettuccini", "taco", "hamburger", "steak", "potato", "apple", "spinach", "salad", "cheese", "vegetables", "zucchini", "papaya", "brownie", "shrimp", "salmon", "sushi", "cookie", "milk", "juice", "almond", "salami", "asparagus", "quinoa", "kiwi", "tomato", "peanut", "tofu", "sandwich"];
@@ -21,6 +21,7 @@
     function generateWord() {
         var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
         correctWord = words[codeNumber];
+        console.log(correctWord);
         letterArray = new Array(correctWord.length);
         for (var i = 0; i < correctWord.length; i++) {
             letterArray[i] = correctWord.charAt(i);
@@ -64,8 +65,8 @@
 
     function disableKeyboard() {
         keyboardIds.forEach(l =>
-        document.getElementById(l).disabled = true
-    )}
+            document.getElementById(l).disabled = true
+        )}
 
     var img = "../images/winner.png";
     var firstImg = "../images/Snooze_You_Lose.png";
@@ -114,9 +115,9 @@
 
 </script>
 
-<img src="" id="manPicture" style="position: absolute; top: 350px; right: 910px; z-index: 1">
-<pre id="writtenLetters"> </pre>
-<pre id="longWrittenLetters"> </pre>
+<img src="" id="manPicture" style="position: absolute; top: 31.3%; right:18%; z-index: 1;">
+<pre id = "writtenLetters"> </pre>
+<pre id = "longWrittenLetters"> </pre>
 <table id="dashes">
     <script>
         if (correctWord.length <= 7) {
@@ -133,8 +134,8 @@
 </table>
 <img src="" id="winner">
 <img src="" id="loser">
-<a href="Homepage.html">
-    <button style="background-image:url(../images/homeicon.png)"></button>
+<a id="homeButton" href="Homepage.html">
+    <button style="background-image:url(../images/homeicon.png); position: absolute; top:20% "></button>
 </a>
 
 <div>
@@ -168,9 +169,9 @@
     </table>
     <table style="margin-left: 203px">
         <tr>
-            <td><button id="Z" onClick="makeGuess('Z'); setColor('Z'); writeGuesses('Z'); writeLetters('Z'); loser(); displayMan()">Z</button></td>
-            <td><button id="X" onClick="makeGuess('X'); setColor('X'); writeGuesses('X'); writeLetters('X'); loser(); displayMan()">X</button></td>
             <td><button id="C" onClick="makeGuess('C'); setColor('C'); writeGuesses('C'); writeLetters('C'); loser(); displayMan()">C</button></td>
+            <td><button id="X" onClick="makeGuess('X'); setColor('X'); writeGuesses('X'); writeLetters('X'); loser(); displayMan()">X</button></td>
+            <td><button id="Z" onClick="makeGuess('Z'); setColor('Z'); writeGuesses('Z'); writeLetters('Z'); loser(); displayMan()">Z</button></td>
             <td><button id="V" onClick="makeGuess('V'); setColor('V'); writeGuesses('V'); writeLetters('V'); loser(); displayMan()">V</button></td>
             <td><button id="B" onClick="makeGuess('B'); setColor('B'); writeGuesses('B'); writeLetters('B'); loser(); displayMan()">B</button></td>
             <td><button id="N" onClick="makeGuess('N'); setColor('N'); writeGuesses('N'); writeLetters('N'); loser(); displayMan()">N</button></td>
@@ -178,14 +179,12 @@
         </tr>
     </table>
 
-    <img src="../images/hanger.png" id="hanger" style="width: 500px; height: 600px; margin-top: 100px; margin-left: 50px"/>
+    <img src="../images/hanger.png" id="hanger"
+         style="width: 500px; height: 600px; float:right;"/>
 
-    <p id = "guesses"><b>Guesses Left: </b></p>
-    <p id = "numGuesses">8</p>
-
+    <p id="guesses"><b>Guesses Left: </b></p>
+    <p id="numGuesses">8</p>
 </div>
-
-
-</p>
+</div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+<div class="mainWrap">
 <script>
 
     var words = ["towel", "sunscreen", "lifeguard", "sand", "saltwater", "sunbathe", "sunglasses", "sandcastle", "sunburn", "seagull", "floatie", "lemonade", "splash", "waves", "surfboard", "boardwalk", "dock", "ocean", "bikini", "driftwood", "boogieboard", "popsicle", "seaweed", "sunshine", "boat", "marina", "parasailing"];
@@ -21,6 +21,7 @@
     function generateWord() {
         var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
         correctWord = words[codeNumber];
+        console.log(correctWord);
         letterArray = new Array(correctWord.length);
         for (var i = 0; i < correctWord.length; i++) {
             letterArray[i] = correctWord.charAt(i);
@@ -64,8 +65,8 @@
 
     function disableKeyboard() {
         keyboardIds.forEach(l =>
-        document.getElementById(l).disabled = true
-    )}
+            document.getElementById(l).disabled = true
+        )}
 
     var img = "../images/winner.png";
     var firstImg = "../images/Snooze_You_Lose.png";
@@ -114,7 +115,7 @@
 
 </script>
 
-<img src="" id="manPicture" style="position: absolute; top: 350px; right: 900px; z-index: 1">
+<img src="" id="manPicture" style="position: absolute; top: 33.2%; right:17.8%; z-index: 1">
 <pre id = "writtenLetters"> </pre>
 <pre id = "longWrittenLetters"> </pre>
 <table id="dashes">
@@ -134,7 +135,7 @@
 <img src="" id="winner">
 <img src="" id="loser">
 <a href="Homepage.html">
-    <button style="background-image:url(../images/homeicon.png)"></button>
+    <button style="background-image:url(../images/homeicon.png); position: absolute; top:20% "></button>
 </a>
 
 <div>
@@ -168,23 +169,23 @@
     </table>
     <table style="margin-left: 203px">
         <tr>
-            <td><button id="Z" onClick="makeGuess('Z'); setColor('Z'); writeGuesses('Z'); writeLetters('Z'); loser()">Z</button></td>
-            <td><button id="X" onClick="makeGuess('X'); setColor('X'); writeGuesses('X'); writeLetters('X'); loser()">X</button></td>
-            <td><button id="C" onClick="makeGuess('C'); setColor('C'); writeGuesses('C'); writeLetters('C'); loser()">C</button></td>
-            <td><button id="V" onClick="makeGuess('V'); setColor('V'); writeGuesses('V'); writeLetters('V'); loser()">V</button></td>
-            <td><button id="B" onClick="makeGuess('B'); setColor('B'); writeGuesses('B'); writeLetters('B'); loser()">B</button></td>
-            <td><button id="N" onClick="makeGuess('N'); setColor('N'); writeGuesses('N'); writeLetters('N'); loser()">N</button></td>
-            <td><button id="M" onClick="makeGuess('M'); setColor('M'); writeGuesses('M'); writeLetters('M'); loser()">M</button></td>
+            <td><button id="C" onClick="makeGuess('C'); setColor('C'); writeGuesses('C'); writeLetters('C'); loser(); displayMan()">C</button></td>
+            <td><button id="X" onClick="makeGuess('X'); setColor('X'); writeGuesses('X'); writeLetters('X'); loser(); displayMan()">X</button></td>
+            <td><button id="Z" onClick="makeGuess('Z'); setColor('Z'); writeGuesses('Z'); writeLetters('Z'); loser(); displayMan()">Z</button></td>
+            <td><button id="V" onClick="makeGuess('V'); setColor('V'); writeGuesses('V'); writeLetters('V'); loser(); displayMan()">V</button></td>
+            <td><button id="B" onClick="makeGuess('B'); setColor('B'); writeGuesses('B'); writeLetters('B'); loser(); displayMan()">B</button></td>
+            <td><button id="N" onClick="makeGuess('N'); setColor('N'); writeGuesses('N'); writeLetters('N'); loser(); displayMan()">N</button></td>
+            <td><button id="M" onClick="makeGuess('M'); setColor('M'); writeGuesses('M'); writeLetters('M'); loser(); displayMan()">M</button></td>
         </tr>
     </table>
 
     <img src="../images/hanger.png" id="hanger"
-         style="width: 500px; height: 600px; margin-top: 100px; margin-left: 50px"/>
+         style="width: 500px; height: 600px; float:right;"/>
 
     <p id="guesses"><b>Guesses Left: </b></p>
     <p id="numGuesses">8</p>
 </div>
-
+</div>
 </p>
 </body>
 </html>
