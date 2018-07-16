@@ -80,16 +80,16 @@ button:hover{
     font-family: "Monaco", sans-serif;
     font-size: 105px;
     position: absolute;
-    bottom: 425px;
+    bottom: 415px;
     left: 170px;
 }
 
 #longWrittenLetters{
     font-family: "Monaco", sans-serif;
-    font-size: 104px; /*was 135px*/
+    font-size: 104px;
     letter-spacing: 22px;
     position: absolute;
-    bottom: 425px;
+    bottom: 415px;
     left: 150px;
 }
 
