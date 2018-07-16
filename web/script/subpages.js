@@ -7,7 +7,6 @@ var arrayToFill;
 function generateWord() {
     var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
     correctWord = words[codeNumber];
-    console.log(correctWord);
     letterArray = new Array(correctWord.length);
     for (var i = 0; i < correctWord.length; i++) {
         letterArray[i] = correctWord.charAt(i);
@@ -93,3 +92,4 @@ function displayMan() {
         document.getElementById("manPicture").src = manArray[7-guessesLeft].toString();
     }
 }
+

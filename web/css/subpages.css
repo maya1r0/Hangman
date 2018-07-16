@@ -1,18 +1,12 @@
-body{
-    background-image: url("../images/beachpic.png");
-}
-.mainWrap
-{
+.mainWrap{
     min-width:1600px;
     height:1000px;
-
 }
 div{
     position:absolute;
-    bottom: 20px;
+    top: 20px;
     left: 20px;
 }
-
 
 button{
     font-size: 40px;
@@ -21,7 +15,6 @@ button{
     height:50px;
     width:50px;
     border-radius: 8px;
-    /*border: 0px solid #000000;*/
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 #hanger{
@@ -93,8 +86,6 @@ button:hover{
 #manPicture{
     zoom: 38%;
 }
-
-
 #loser{
     position:absolute;
     display: block;
@@ -121,7 +112,7 @@ button:hover{
     height: 100px;
     width: 150px;
     font-size: 30px;
-    background-image: url("../images/food.png");
+    background-image: url("../images/beach.png");
 }
 
 #newCategory{
