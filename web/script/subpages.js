@@ -93,3 +93,12 @@ function displayMan() {
     }
 }
 
+function processClick(buttonId) {
+    makeGuess(buttonId);
+    setColor(buttonId);
+    writeGuesses(buttonId);
+    writeLetters(buttonId);
+    loser();
+    displayMan();
+}
+
