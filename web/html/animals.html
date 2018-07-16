@@ -69,16 +69,23 @@
             document.getElementById(l).disabled = true
         )}
 
-    var img = "../images/winner.png";
-    var firstImg = "../images/Snooze_You_Lose.png";
+    var img = "../images/winnerpic.png";
+    var firstImg = "../images/loserpic.png";
 
     function loser() {
         if (guessesLeft === 0) {
             document.getElementById("loser").src = firstImg.toString();
+            document.getElementById("playAgain").style.display = "block";
+            document.getElementById("newCategory").style.display = "block";
+            document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
             disableKeyboard();
+
         }
         if (arrayToFill.indexOf(" ") === -1) {
             document.getElementById("winner").src = img.toString();
+            document.getElementById("playAgain").style.display = "block";
+            document.getElementById("newCategory").style.display = "block";
+            document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
             disableKeyboard();
         }
     }
@@ -132,6 +139,9 @@
         }
     </script>
 </table>
+<a href="animals.html"><button id= "playAgain" style="display:none">Play Again</button></a>
+<a href="Homepage.html"><button id = "newCategory" style="display:none">New Category</button></a>
+<p id="afterGameWord"></p>
 <img src="" id="winner">
 <img src="" id="loser">
 <a href="Homepage.html">
@@ -185,8 +195,7 @@
     <p id="guesses"><b>Guesses Left: </b></p>
     <p id="numGuesses">8</p>
 
-</p>
 </div>
-    </div>
+
 </body>
 </html>

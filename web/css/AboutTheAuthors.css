@@ -1,13 +1,15 @@
 body{
-    background-image: url("../images/aboutBackground.jpeg");
+    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Ec7hwrKKxik52rser/4k-white-clean-bokeh-background-animation-seamless-loop_v4gh9vafe__F0000.png");
 }
 
 #heading{
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-weight: bold;
-    font-size: 72px;
-    color: #ff0000;
+    font-family: "Phosphate", sans-serif;
+    letter-spacing: 3px;
+    word-spacing: 6px;
+    font-size: 60px;
+    line-height: 0.5;
 }
+
 
 #nameHeading{
     font-family: "Comic Sans MS", cursive, sans-serif;
@@ -17,5 +19,19 @@ body{
 
 #info{
     font-size: 16px;
-    color: #ffffff;
+    color: #000000;
+    text-align: justify;
+}
+
+span {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: bold;
+    font-size: 72px;
+    color: #ad1e17;
+}
+
+div{
+    text-indent: 40px;
+    margin-bottom: 10px;
+    line-height: 20px;
 }

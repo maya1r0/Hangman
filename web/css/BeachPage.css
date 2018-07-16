@@ -90,22 +90,51 @@ button:hover{
 #manPicture{
     zoom: 38%;
 }
-
 #loser{
-    position:relative;
+    position:absolute;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    top: 25%;
+    left: 27%;
+    width: 43%;
     z-index: 1;
 }
 
 #winner{
-    position:relative;
+    position:absolute;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    top: 25%;
+    left: 27%;
+    width: 43%;
     z-index: 1;
+}
 
+#playAgain{
+    position:absolute;
+    top: 50%;
+    right: 52%;
+    z-index: 2;
+    height: 100px;
+    width: 150px;
+    font-size: 30px;
+    background-image: url("../images/beach.png");
+}
+
+#newCategory{
+    position:absolute;
+    top: 50%;
+    right: 40%;
+    z-index: 2;
+    height: 100px;
+    width: 150px;
+    font-size: 30px;
+    background-color: rgba(134,0,0,0.78)
+}
+
+#afterGameWord{
+    position: absolute;
+    top: 42.5%;
+    left: 39%;
+    z-index: 2;
+    font-size: 40px;
+    font-family: "Nanum Pen Script", sans-serif;
 }
