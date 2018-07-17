@@ -3,7 +3,8 @@ var correctWord;
 var letterArray;
 var guessesLeft = 8;
 var arrayToFill;
-var sound = new Audio("../audio/goodSound.mp4");
+var correctSound = new Audio("../audio/goodSound.mp4");
+var wrongSound = new Audio("../audio/wrongGuess.mp4");
 var wonGame = new Audio ("../audio/wonGame.mp4");
 var lostGame = new Audio("../audio/lostGame.mp4");
 
@@ -98,8 +99,12 @@ function displayMan() {
         document.getElementById("manPicture").src = manArray[7-guessesLeft].toString();
     }
 }
-function makeSound(){
-    sound.play();
+
+function makeGuessSound(buttonId){
+    if (checkAnswer(buttonId))
+        correctSound.play();
+    else
+        wrongSound.play();
 }
 
 function processClick(buttonId) {
@@ -109,6 +114,6 @@ function processClick(buttonId) {
     writeLetters(buttonId);
     loser();
     displayMan();
-    makeSound();
+    makeGuessSound(buttonId);
 }
 
