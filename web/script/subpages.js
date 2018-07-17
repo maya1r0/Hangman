@@ -3,6 +3,7 @@ var correctWord;
 var letterArray;
 var guessesLeft = 8;
 var arrayToFill;
+var sound = new Audio("../audio/goodSound.mp4");
 
 function generateWord() {
     var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
@@ -92,7 +93,9 @@ function displayMan() {
         document.getElementById("manPicture").src = manArray[7-guessesLeft].toString();
     }
 }
-
+function makeSound(){
+        sound.play();
+}
 function processClick(buttonId) {
     makeGuess(buttonId);
     setColor(buttonId);
@@ -100,5 +103,6 @@ function processClick(buttonId) {
     writeLetters(buttonId);
     loser();
     displayMan();
+    makeSound();
 }
 
