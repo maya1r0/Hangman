@@ -3,12 +3,12 @@
 <head>
 
     <title>Hangman | Food</title>
-    <link rel="stylesheet" type="text/css" href="../css/foodstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/subpages.css">
     <script src = "../script/subpages.js"></script>
 
 </head>
 
-<body>
+<body style="background-image: url('../images/KitchenPic.png')">
 <div class="mainWrap">
     <script>
 
@@ -19,14 +19,14 @@
             "cracker","popsicle","salsa","tart","peas","fudge","beans","honey","pear","chips"];
 
         var manArray = new Array();
-        manArray[0] = "../images/chef0.png"
-        manArray[1] = "../images/chef1.png"
-        manArray[2] = "../images/chef2.png"
-        manArray[3] = "../images/chef3.png"
-        manArray[4] = "../images/chef4.png"
-        manArray[5] = "../images/chef5.png"
-        manArray[6] = "../images/chef6.png"
-        manArray[7] = "../images/chef7.png"
+        manArray[0] = "../images/chef0.png";
+        manArray[1] = "../images/chef1.png";
+        manArray[2] = "../images/chef2.png";
+        manArray[3] = "../images/chef3.png";
+        manArray[4] = "../images/chef4.png";
+        manArray[5] = "../images/chef5.png";
+        manArray[6] = "../images/chef6.png";
+        manArray[7] = "../images/chef7.png";
 
         generateWord();
 
@@ -49,7 +49,7 @@
             }
         </script>
     </table>
-    <a href="food.html"><button id= "playAgain" style="display:none">Play Again</button></a>
+    <a href="food.html"><button id= "playAgain" style="display:none; background-image: url('../images/food.png');">Play Again</button></a>
     <a href="Homepage.html"><button id = "newCategory" style="display:none">New Category</button></a>
     <p id="afterGameWord"></p>
     <img src="" id="winner">

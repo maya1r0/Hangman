@@ -1,12 +1,16 @@
-.mainWrap{
+
+.mainWrap
+{
     min-width:1600px;
     height:1000px;
+
 }
 div{
     position:absolute;
-    top: 20px;
+    bottom: 20px;
     left: 20px;
 }
+
 
 button{
     font-size: 40px;
@@ -86,6 +90,8 @@ button:hover{
 #manPicture{
     zoom: 38%;
 }
+
+
 #loser{
     position:absolute;
     display: block;
@@ -112,8 +118,8 @@ button:hover{
     height: 100px;
     width: 150px;
     font-size: 30px;
-    background-image: url("../images/beach.png");
 }
+
 
 #newCategory{
     position:absolute;
