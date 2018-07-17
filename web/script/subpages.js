@@ -93,9 +93,7 @@ function displayMan() {
         document.getElementById("manPicture").src = manArray[7-guessesLeft].toString();
     }
 }
-function makeSound(){
-        sound.play();
-}
+
 function processClick(buttonId) {
     makeGuess(buttonId);
     setColor(buttonId);
@@ -103,6 +101,5 @@ function processClick(buttonId) {
     writeLetters(buttonId);
     loser();
     displayMan();
-    makeSound();
 }
 
