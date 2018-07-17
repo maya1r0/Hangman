@@ -12,8 +12,9 @@ body{
 
 
 #nameHeading{
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 32px;
+    font-family: "Phosphate", sans-serif;
+    font-size: 30px;
+    letter-spacing: 3px;
     color: #ad1e17;
 }
 
@@ -24,9 +25,9 @@ body{
 }
 
 span {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: "Nanum Pen Script", sans-serif;
     font-weight: bold;
-    font-size: 72px;
+    font-size: 100px;
     color: #ad1e17;
 }
 
@@ -37,8 +38,6 @@ div{
 }
 
 button{
-    font-size: 40px;
-    font-family: "Nanum Pen Script", sans-serif;
     margin: 15px;
     height:50px;
     width:50px;
