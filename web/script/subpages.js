@@ -4,6 +4,8 @@ var letterArray;
 var guessesLeft = 8;
 var arrayToFill;
 var sound = new Audio("../audio/goodSound.mp4");
+var wonGame = new Audio ("../audio/wonGame.mp4");
+var lostGame = new Audio("../audio/lostGame.mp4");
 
 function generateWord() {
     var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
@@ -58,7 +60,8 @@ var img = "../images/winnerpic.png";
 var firstImg = "../images/loserpic.png";
 
 function loser() {
-    if (guessesLeft === 0) {
+    if (guessesLeft === 0){
+        lostGame.play();
         document.getElementById("loser").src = firstImg.toString();
         document.getElementById("playAgain").style.display = "block";
         document.getElementById("newCategory").style.display = "block";
@@ -67,11 +70,13 @@ function loser() {
 
     }
     if (arrayToFill.indexOf(" ") === -1) {
+        wonGame.play();
         document.getElementById("winner").src = img.toString();
         document.getElementById("playAgain").style.display = "block";
         document.getElementById("newCategory").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
+
     }
 }
 
@@ -104,6 +109,6 @@ function processClick(buttonId) {
     writeLetters(buttonId);
     loser();
     displayMan();
-    // makeSound();
+    makeSound();
 }
 
