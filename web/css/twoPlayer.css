@@ -1,0 +1,12 @@
+
+#input{
+    position: absolute;
+    font-size: 40px;
+    text-align: center;
+    background-color: #e7e7e7; color: black;
+    display: inline-block;
+    height:15%;
+    width:20%;
+    margin-top: 25%;
+    margin-left: 40%;
+}
