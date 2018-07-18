@@ -7,6 +7,7 @@ var correctSound = new Audio("../audio/goodSound.mp4");
 var wrongSound = new Audio("../audio/wrongGuess.mp4");
 var wonGame = new Audio ("../audio/wonGame.mp4");
 var lostGame = new Audio("../audio/lostGame.mp4");
+var mute = false;
 
 function generateWord() {
     var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
@@ -62,7 +63,9 @@ var firstImg = "../images/loserpic.png";
 
 function loser() {
     if (guessesLeft === 0){
-        lostGame.play();
+        if (!mute) {
+            lostGame.play();
+        }
         document.getElementById("loser").src = firstImg.toString();
         document.getElementById("playAgain").style.display = "block";
         document.getElementById("newCategory").style.display = "block";
@@ -71,7 +74,9 @@ function loser() {
 
     }
     if (arrayToFill.indexOf(" ") === -1) {
-        wonGame.play();
+        if (!mute) {
+            wonGame.play();
+        }
         document.getElementById("winner").src = img.toString();
         document.getElementById("playAgain").style.display = "block";
         document.getElementById("newCategory").style.display = "block";
@@ -101,10 +106,21 @@ function displayMan() {
 }
 
 function makeGuessSound(buttonId){
-    if (checkAnswer(buttonId))
-        correctSound.play();
+    if (!mute) {
+        if (checkAnswer(buttonId))
+            correctSound.play();
+        else
+            wrongSound.play();
+    }
+}
+
+function muteOrUnmute(){
+    mute=!mute;
+    if (mute){
+        document.getElementById('muteButton').style.backgroundImage = "url('../images/muted.png')";
+    }
     else
-        wrongSound.play();
+        document.getElementById('muteButton').style.backgroundImage = "url('../images/unmuted.png')";
 }
 
 function processClick(buttonId) {

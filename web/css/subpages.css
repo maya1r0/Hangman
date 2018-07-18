@@ -138,3 +138,10 @@ button:hover{
     font-size: 40px;
     font-family: "Nanum Pen Script", sans-serif;
 }
+
+#muteButton{
+    background-image: url('../images/unmuted.png');
+    position: absolute;
+    top: 20%;
+    right: 0%;
+}
