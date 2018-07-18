@@ -20,6 +20,7 @@ function generateWord() {
     for (var i = 0; i < correctWord.length; i++) {
         arrayToFill[i] = " ";
     }
+
 }
 function generate2PlayerWord() {
     correctWord = localStorage.getItem('myWord');
