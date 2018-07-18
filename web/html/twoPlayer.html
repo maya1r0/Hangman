@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>two-player mode</title>
-</head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hangman | Sports</title>
@@ -12,32 +11,32 @@
 <script src = "../script/subpages.js"></script>
 <style>
     button:hover{
-        background-color: rgb(185, 187, 217);
+        background-color: rgb(167, 228, 228);
     }
 </style>
 </head>
 
-<body style="background-image: url('../images/sportbackground.png')">
+<body style="background-image: url('../images/twoplayerbg.png')">
 <div class="mainWrap">
     <script>
 
          word = prompt("Enter the word for your opponent to guess:");
 
         var manArray = new Array();
-        manArray[0] = "../images/ref0.png";
-        manArray[1] = "../images/ref1.png";
-        manArray[2] = "../images/ref2.png";
-        manArray[3] = "../images/ref3.png";
-        manArray[4] = "../images/ref4.png";
-        manArray[5] = "../images/ref5.png";
-        manArray[6] = "../images/ref6.png";
-        manArray[7] = "../images/ref7.png";
+        manArray[0] = "../images/normalguy0.png";
+        manArray[1] = "../images/normalguy1.png";
+        manArray[2] = "../images/normalguy2.png";
+        manArray[3] = "../images/normalguy3.png";
+        manArray[4] = "../images/normalguy4.png";
+        manArray[5] = "../images/normalguy5.png";
+        manArray[6] = "../images/normalguy6.png";
+        manArray[7] = "../images/normalguy7.png";
 
         generate2PlayerWord();
 
     </script>
 
-    <img src="" id="manPicture" style="position: absolute; top: 35%; right:16.75%; z-index: 1;">
+    <img src="" id="manPicture" style="position: absolute; top: 33%; right:17.9%; z-index: 1;">
     <pre id = "writtenLetters"> </pre>
     <pre id = "longWrittenLetters"> </pre>
     <table id="dashes">
@@ -54,7 +53,7 @@
             }
         </script>
     </table>
-    <a href="SportsPage.html"><button id= "playAgain" style="display:none; background-image: url('../images/sports.png')">Play Again</button></a>
+    <a href="SportsPage.html"><button id= "playAgain" style="display:none; background-image: url('../images/two-Player.png')">Play Again</button></a>
     <a href="Homepage.html"><button id = "newCategory" style="display:none">New Category</button></a>
     <p id="afterGameWord"></p>
     <img src="" id="winner">

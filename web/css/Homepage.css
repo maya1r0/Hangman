@@ -1,5 +1,6 @@
-body{
-    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Ec7hwrKKxik52rser/4k-white-clean-bokeh-background-animation-seamless-loop_v4gh9vafe__F0000.png");
+html{
+    background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Ec7hwrKKxik52rser/4k-white-clean-bokeh-background-animation-seamless-loop_v4gh9vafe__F0000.png");
+
     text-align: center;
     font-family: "Phosphate", sans-serif;
     letter-spacing: 3px;
