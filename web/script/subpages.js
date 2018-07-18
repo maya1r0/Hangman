@@ -8,7 +8,6 @@ var wrongSound = new Audio("../audio/wrongGuess.mp4");
 var wonGame = new Audio ("../audio/wonGame.mp4");
 var lostGame = new Audio("../audio/lostGame.mp4");
 var mute = false;
-var word;
 
 function generateWord() {
     var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
@@ -23,7 +22,7 @@ function generateWord() {
     }
 }
 function generate2PlayerWord() {
-    correctWord = word;
+    correctWord = localStorage.getItem('myWord');
     letterArray = new Array(correctWord.length);
     for (var i = 0; i < correctWord.length; i++) {
         letterArray[i] = correctWord.charAt(i);

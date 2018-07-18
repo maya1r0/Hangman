@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>WordFor2Player</title>
+    <script src = "../script/subpages.js"></script>
+</head>
+<body>
+    <p>Enter the word to guess:</p>
+    Enter your word:<input type="text" id="userInput">
+    <a href="twoPlayer.html"><button onclick = assignWord()>Start</button></a>
+    <!--<a href="twoPlayer.html"><button>Click here to start</button></a>-->
+
+<script>
+    function assignWord() {
+        localStorage.setItem("myWord", document.getElementById('userInput').value.toString())
+    }
+    assignWord();
+</script>
+</body>
+</html>

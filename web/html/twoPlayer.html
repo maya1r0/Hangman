@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman | Two-Player</title>
@@ -18,13 +17,19 @@
             z-index: 1;
         }
     </style>
+    <title>two-player mode</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hangman | Sports</title>
+<link rel="stylesheet" type="text/css" href="../css/subpages.css">
+<script src = "../script/subpages.js"></script>
 </head>
 
 <body id="bg" style="background: url('../images/twoplayerbg.png') no-repeat center center fixed">
 <div class="mainWrap">
     <script>
 
-        word = prompt("Enter the word for your opponent to guess:");
+        generate2PlayerWord();
 
         var manArray = new Array();
         manArray[0] = "../images/normalguy0.png";
@@ -36,7 +41,7 @@
         manArray[6] = "../images/normalguy6.png";
         manArray[7] = "../images/normalguy7.png";
 
-        generate2PlayerWord();
+
 
     </script>
     <button id="muteButton" onclick="muteOrUnmute()"></button>
