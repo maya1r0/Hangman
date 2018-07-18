@@ -36,8 +36,9 @@ function generate2PlayerWord() {
 
 function makeGuess(buttonId) {
     console.log(buttonId);
-    var element = document.getElementById(buttonId);
-    element.disabled = true;
+    const element = document.getElementById("keyboard-object");
+    const button = element.contentDocument.getElementById(buttonId);
+    button.disabled = true;
 }
 
 function checkAnswer(buttonId) {
@@ -50,11 +51,13 @@ function checkAnswer(buttonId) {
 }
 
 function setColor(buttonId) {
+    const element = document.getElementById("keyboard-object");
+    const button = element.contentDocument.getElementById(buttonId);
     if (checkAnswer(buttonId)) {
-        document.getElementById(buttonId).style.backgroundColor = "#7CEC73";
+        button.style.backgroundColor = "#7CEC73";
     }
     else {
-        document.getElementById(buttonId).style.backgroundColor = "#ED6464";
+        button.style.backgroundColor = "#ED6464";
     }
 }
 
@@ -66,9 +69,11 @@ function writeGuesses(buttonId) {
 }
 
 function disableKeyboard() {
-    keyboardIds.forEach(l =>
-        document.getElementById(l).disabled = true
-    )}
+    const element = document.getElementById("keyboard-object");
+    for (let i = 0; i<keyboardIds.length; i++){
+        element.contentDocument.getElementById(keyboardIds[i]).disabled = true;
+    }
+}
 
 var img = "../images/winnerpic.png";
 var firstImg = "../images/loserpic.png";
@@ -140,8 +145,8 @@ function processClick(buttonId) {
     setColor(buttonId);
     writeGuesses(buttonId);
     writeLetters(buttonId);
-    loser();
     displayMan();
+    loser();
     makeGuessSound(buttonId);
 }
 
