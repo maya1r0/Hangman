@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>two-player mode</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hangman | Sports</title>
+<link rel="stylesheet" type="text/css" href="../css/subpages.css">
+<link rel="stylesheet" type="text/css" href="../css/twoPlayer.css">
+<script src = "../script/subpages.js"></script>
+<style>
+    button:hover{
+        background-color: rgb(185, 187, 217);
+    }
+</style>
+</head>
+
+<body style="background-image: url('../images/sportbackground.png')">
+<div class="mainWrap">
+    <script>
+
+         word = prompt("Enter the word for your opponent to guess:");
+
+        var manArray = new Array();
+        manArray[0] = "../images/ref0.png";
+        manArray[1] = "../images/ref1.png";
+        manArray[2] = "../images/ref2.png";
+        manArray[3] = "../images/ref3.png";
+        manArray[4] = "../images/ref4.png";
+        manArray[5] = "../images/ref5.png";
+        manArray[6] = "../images/ref6.png";
+        manArray[7] = "../images/ref7.png";
+
+        generate2PlayerWord();
+
+    </script>
+
+    <img src="" id="manPicture" style="position: absolute; top: 35%; right:16.75%; z-index: 1;">
+    <pre id = "writtenLetters"> </pre>
+    <pre id = "longWrittenLetters"> </pre>
+    <table id="dashes">
+        <script>
+            if (correctWord.length <= 7) {
+                for (var i = 0; i < correctWord.length; i++) {
+                    document.write('<td><span id = "indvletters">' + "_ " + '</span></td>');
+                }
+            }
+            else {
+                for (var x = 0; x < correctWord.length; x++) {
+                    document.write('<td><span id = "longWord">' + "_ " + '</span></td>')
+                }
+            }
+        </script>
+    </table>
+    <a href="SportsPage.html"><button id= "playAgain" style="display:none; background-image: url('../images/sports.png')">Play Again</button></a>
+    <a href="Homepage.html"><button id = "newCategory" style="display:none">New Category</button></a>
+    <p id="afterGameWord"></p>
+    <img src="" id="winner">
+    <img src="" id="loser">
+    <a href="Homepage.html">
+        <button style="background-image:url(../images/homeicon.png); position: absolute;top:20% "></button>
+    </a>
+
+    <div>
+
+        <table style="margin-left: 100px">
+            <tr>
+                <td><button id="Q" onClick="processClick('Q')">Q</button></td>
+                <td><button id="W" onClick="processClick('W')">W</button></td>
+                <td><button id="E" onClick="processClick('E')">E</button></td>
+                <td><button id="R" onClick="processClick('R')">R</button></td>
+                <td><button id="T" onClick="processClick('T')">T</button></td>
+                <td><button id="Y" onClick="processClick('Y')">Y</button></td>
+                <td><button id="U" onClick="processClick('U')">U</button></td>
+                <td><button id="I" onClick="processClick('I')">I</button></td>
+                <td><button id="O" onClick="processClick('O')">O</button></td>
+                <td><button id="P" onClick="processClick('P')">P</button></td>
+            </tr>
+        </table>
+        <table style="margin-left: 130px">
+            <tr>
+                <td><button id="A" onClick="processClick('A')">A</button></td>
+                <td><button id="S" onClick="processClick('S')">S</button></td>
+                <td><button id="D" onClick="processClick('D')">D</button></td>
+                <td><button id="F" onClick="processClick('F')">F</button></td>
+                <td><button id="G" onClick="processClick('G')">G</button></td>
+                <td><button id="H" onClick="processClick('H')">H</button></td>
+                <td><button id="J" onClick="processClick('J')">J</button></td>
+                <td><button id="K" onClick="processClick('K')">K</button></td>
+                <td><button id="L" onClick="processClick('L')">L</button></td>
+            </tr>
+        </table>
+        <table style="margin-left: 203px">
+            <tr>
+                <td><button id="C" onClick="processClick('C')">C</button></td>
+                <td><button id="X" onClick="processClick('X')">X</button></td>
+                <td><button id="Z" onClick="processClick('Z')">Z</button></td>
+                <td><button id="V" onClick="processClick('V')">V</button></td>
+                <td><button id="B" onClick="processClick('B')">B</button></td>
+                <td><button id="N" onClick="processClick('N')">N</button></td>
+                <td><button id="M" onClick="processClick('M')">M</button></td>
+            </tr>
+        </table>
+
+        <img src="../images/hanger.png" id="hanger"
+             style="width: 500px; height: 600px; float:right;"/>
+
+        <p id="guesses"><b>Guesses Left: </b></p>
+        <p id="numGuesses">8</p>
+    </div>
+</div>
+</body>
+</html>

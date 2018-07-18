@@ -8,10 +8,22 @@ var wrongSound = new Audio("../audio/wrongGuess.mp4");
 var wonGame = new Audio ("../audio/wonGame.mp4");
 var lostGame = new Audio("../audio/lostGame.mp4");
 var mute = false;
+var word;
 
 function generateWord() {
     var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
     correctWord = words[codeNumber];
+    letterArray = new Array(correctWord.length);
+    for (var i = 0; i < correctWord.length; i++) {
+        letterArray[i] = correctWord.charAt(i);
+    }
+    arrayToFill = [];
+    for (var i = 0; i < correctWord.length; i++) {
+        arrayToFill[i] = " ";
+    }
+}
+function generate2PlayerWord() {
+    correctWord = word;
     letterArray = new Array(correctWord.length);
     for (var i = 0; i < correctWord.length; i++) {
         letterArray[i] = correctWord.charAt(i);
