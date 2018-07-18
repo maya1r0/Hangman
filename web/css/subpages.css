@@ -1,13 +1,18 @@
 
 .mainWrap
 {
+    position: relative;
     min-width:1600px;
-    height:1000px;
+    min-height:1000px;
+    right: 0%;
+    left: 0%;
+    top: 0%;
+    bottom: 0%;
 }
 div{
     position:absolute;
-    bottom: 20px;
-    left: 20px;
+    top: 65%;
+    left: 5%;
 }
 
 
@@ -22,24 +27,24 @@ button{
 }
 #hanger{
     position: absolute;
-    bottom: 100px;
-    right: -600px;
+    top: 25%;
+    left: 65%;
 }
 
 #guesses{
     font-family: 'Nanum Pen Script', sans-serif;
     font-size: 50px;
     position: absolute;
-    bottom: -20px;
-    right: -350px;
+    top: 80%;
+    left: 70%;
 }
 
 #numGuesses{
     font-family: 'Nanum Pen Script', sans-serif;
     font-size: 55px;
     position: absolute;
-    bottom: -25px;
-    right: -385px;
+    top: 79%;
+    left: 85%;
     font-weight: bold;
 }
 
@@ -116,6 +121,7 @@ button:hover{
     height: 100px;
     width: 150px;
     font-size: 30px;
+    background-image: url('../images/beach.png');
 }
 
 
@@ -142,6 +148,12 @@ button:hover{
 #muteButton{
     background-image: url('../images/unmuted.png');
     position: absolute;
-    top: 20%;
-    right: 0%;
+    top: 1%;
+    left: 94%;
+}
+
+#homeButton{
+    position: absolute;
+    top: 1%;
+    left: 1%;
 }

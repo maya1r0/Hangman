@@ -9,6 +9,12 @@
         button:hover{
             background-color: #BEEAF9;
         }
+        #manPicture{
+            position: absolute;
+            left: 69.25%;
+            top: 30%;
+            z-index: 1;
+        }
     </style>
 </head>
 
@@ -39,7 +45,7 @@
     </script>
 
     <button id="muteButton" onclick="muteOrUnmute()"></button>
-    <img src="" id="manPicture" style="position: absolute; top: 33.2%; right:17.8%; z-index: 1">
+    <img src="" id="manPicture">
     <pre id = "writtenLetters"> </pre>
     <pre id = "longWrittenLetters"> </pre>
     <table id="dashes">
@@ -56,17 +62,20 @@
             }
         </script>
     </table>
+
     <a href="BeachPage.html"><button id= "playAgain" style="display:none; background-image: url('../images/beach.png')">Play Again</button></a>
     <a href="Homepage.html"><button id = "newCategory" style="display:none">New Category</button></a>
     <p id="afterGameWord"></p>
+
     <img src="" id="winner">
     <img src="" id="loser">
+
+
     <a id="homeButton" href="Homepage.html">
-        <button style="background-image:url(../images/homeicon.png); position: absolute; top:20% "></button>
+        <button style="background-image:url(../images/homeicon.png)"></button>
     </a>
 
     <div>
-
         <table style="margin-left: 100px">
             <tr>
                 <td><button id="Q" onClick="processClick('Q')">Q</button></td>
@@ -105,13 +114,13 @@
                 <td><button id="M" onClick="processClick('M')">M</button></td>
             </tr>
         </table>
-
-        <img src="../images/hanger.png" id="hanger"
-             style="width: 500px; height: 600px; float:right;"/>
-
-        <p id="guesses"><b>Guesses Left: </b></p>
-        <p id="numGuesses">8</p>
     </div>
+    <img src="../images/hanger.png" id="hanger"
+         style="width: 500px; height: 600px; float:right;"/>
+
+    <p id="guesses"><b>Guesses Left: </b></p>
+    <p id="numGuesses">8</p>
+
 </div>
 </body>
 </html>
