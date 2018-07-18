@@ -44,7 +44,7 @@ function makeGuess(buttonId) {
 function checkAnswer(buttonId) {
     var inWord = false;
     for (var i = 0; i < correctWord.length; i++) {
-        if (letterArray[i] === buttonId.toLowerCase())
+        if (letterArray[i].toLowerCase() === buttonId.toLowerCase())
             inWord = true;
     }
     return inWord;
