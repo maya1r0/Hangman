@@ -47,6 +47,6 @@ button{
 }
 
 button:hover{
-    background: rgb(185, 187, 217);
+    background: rgba(173, 30, 23, 0.61);
     transform: scale(1.5);
 }

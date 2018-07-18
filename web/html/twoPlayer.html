@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <title>two-player mode</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hangman | Sports</title>
-<link rel="stylesheet" type="text/css" href="../css/subpages.css">
-<link rel="stylesheet" type="text/css" href="../css/twoPlayer.css">
-<script src = "../script/subpages.js"></script>
-<style>
-    button:hover{
-        background-color: rgb(167, 228, 228);
-    }
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman | Sports</title>
+    <link rel="stylesheet" type="text/css" href="../css/subpages.css">
+    <script src = "../script/subpages.js"></script>
+    <style>
+        button:hover{
+            background-color: rgb(167, 228, 228);
+        }
+        #manPicture{
+            position: absolute;
+            right: 20%;
+            top: 30%;
+            z-index: 1;
+        }
+    </style>
 </head>
 
-<body style="background-image: url('../images/twoplayerbg.png')">
+<body id="bg" style="background: url('../images/twoplayerbg.png') no-repeat center center fixed">
 <div class="mainWrap">
     <script>
 
-         word = prompt("Enter the word for your opponent to guess:");
+        word = prompt("Enter the word for your opponent to guess:");
 
         var manArray = new Array();
         manArray[0] = "../images/normalguy0.png";
@@ -35,8 +39,8 @@
         generate2PlayerWord();
 
     </script>
-
-    <img src="" id="manPicture" style="position: absolute; top: 33%; right:17.9%; z-index: 1;">
+    <button id="muteButton" onclick="muteOrUnmute()"></button>
+    <img src="" id="manPicture">
     <pre id = "writtenLetters"> </pre>
     <pre id = "longWrittenLetters"> </pre>
     <table id="dashes">
@@ -53,17 +57,20 @@
             }
         </script>
     </table>
-    <a href="SportsPage.html"><button id= "playAgain" style="display:none; background-image: url('../images/two-Player.png')">Play Again</button></a>
+
+    <a href="twoPlayer.html"><button id= "playAgain" style="display:none; background-image: url('../images/two-Player.png')">Play Again</button></a>
     <a href="Homepage.html"><button id = "newCategory" style="display:none">New Category</button></a>
     <p id="afterGameWord"></p>
+
     <img src="" id="winner">
     <img src="" id="loser">
-    <a href="Homepage.html">
-        <button style="background-image:url(../images/homeicon.png); position: absolute;top:20% "></button>
+
+
+    <a id="homeButton" href="Homepage.html">
+        <button style="background-image:url(../images/homeicon.png)"></button>
     </a>
 
     <div>
-
         <table style="margin-left: 100px">
             <tr>
                 <td><button id="Q" onClick="processClick('Q')">Q</button></td>
@@ -102,13 +109,13 @@
                 <td><button id="M" onClick="processClick('M')">M</button></td>
             </tr>
         </table>
-
-        <img src="../images/hanger.png" id="hanger"
-             style="width: 500px; height: 600px; float:right;"/>
-
-        <p id="guesses"><b>Guesses Left: </b></p>
-        <p id="numGuesses">8</p>
     </div>
+    <img src="../images/hanger.png" id="hanger"
+         style="width: 500px; height: 600px; float:right;"/>
+
+    <p id="guesses"><b>Guesses Left: </b></p>
+    <p id="numGuesses">8</p>
+
 </div>
 </body>
 </html>
