@@ -86,6 +86,7 @@ function loser() {
         document.getElementById("loser").src = firstImg.toString();
         document.getElementById("playAgain").style.display = "block";
         document.getElementById("newCategory").style.display = "block";
+        document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
 
@@ -97,6 +98,7 @@ function loser() {
         document.getElementById("winner").src = img.toString();
         document.getElementById("playAgain").style.display = "block";
         document.getElementById("newCategory").style.display = "block";
+        document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
 
@@ -148,5 +150,14 @@ function processClick(buttonId) {
     displayMan();
     loser();
     makeGuessSound(buttonId);
+}
+
+function xPopUp(){
+    document.getElementById("playAgain").style.display = "none";
+    document.getElementById("newCategory").style.display = "none";
+    document.getElementById("afterGameWord").style.display = "none";
+    document.getElementById("winner").style.display = "none";
+    document.getElementById("loser").style.display = "none";
+    document.getElementById("xButton").style.display = "none";
 }
 

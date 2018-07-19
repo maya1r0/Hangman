@@ -111,7 +111,7 @@ button:hover{
     display: block;
     top: 25%;
     left: 27%;
-    width: 43%;
+    width: 730px;
     z-index: 1;
 }
 
@@ -120,7 +120,7 @@ button:hover{
     display: block;
     top: 25%;
     left: 27%;
-    width: 43%;
+    width: 730px;
     z-index: 1;
 }
 
@@ -149,8 +149,8 @@ button:hover{
 
 #afterGameWord{
     position: absolute;
-    top: 42.5%;
-    left: 39%;
+    top: 42.75%;
+    left: 38.5%;
     z-index: 2;
     font-size: 40px;
     font-family: "Nanum Pen Script", sans-serif;
@@ -167,4 +167,14 @@ button:hover{
     position: absolute;
     top: 1%;
     left: 1%;
+}
+
+#xButton{
+    position: absolute;
+    top: 26%;
+    left: 66%;
+    height: 35px;
+    width: 35px;
+    font-size: 30px;
+    z-index: 2;
 }
