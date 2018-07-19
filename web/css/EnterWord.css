@@ -1,0 +1,27 @@
+button{
+    font-size: 40px;
+    font-family: "Nanum Pen Script", sans-serif;
+    margin: 15px;
+    height:50px;
+    width:110px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    /*color: #ad1e17;*/
+}
+p{
+    font-size: 40px;
+    font-family: "Phosphate";
+}
+body{
+    background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Ec7hwrKKxik52rser/4k-white-clean-bokeh-background-animation-seamless-loop_v4gh9vafe__F0000.png");
+    margin-top: 20%;
+    text-align: center;
+}
+button:hover{
+    transform: scale(1.2);
+}
+#homeButton{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+}
