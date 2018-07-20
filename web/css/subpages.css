@@ -68,7 +68,7 @@ button:hover{
 #dashes{
     font-family: "Nanum Pen Script", sans-serif;
     position: absolute;
-    bottom: 500px;
+    top: 30%;
     left: 140px;
 }
 
@@ -87,7 +87,7 @@ button:hover{
     font-size: 120px;
     table-layout: fixed;
     position: absolute;
-    top: 345px;
+    top: 37%;
     left: 170px;
     width: 3720px;
 }
@@ -103,7 +103,7 @@ button:hover{
     font-size: 105px;
     table-layout: fixed;
     position: absolute;
-    top: 370px;
+    top: 37%;
     left: 150px;
     width: 2505px;
 }
