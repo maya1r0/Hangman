@@ -27,6 +27,7 @@
 
 <body id="bg">
 <div class="mainWrap">
+
     <script>
 
         var words = ["towel", "sunscreen", "lifeguard", "sand", "saltwater", "sunbathe", "sunglasses", "sandcastle", "sunburn", "seagull",
@@ -53,8 +54,74 @@
 
     <button id="muteButton" onclick="muteOrUnmute()"></button>
     <img src="" id="manPicture">
-    <pre id = "writtenLetters"> </pre>
-    <pre id = "longWrittenLetters"> </pre>
+    <table id = "writtenLetters">
+        <tr id = "firstRow">
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+            <td id = "shortTD"></td>
+        </tr>
+    </table>
+    <table id = "longWrittenLetters">
+        <tr id = "longFirstRow">
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+            <td id = "longTD"></td>
+        </tr>
+    </table>
     <table id="dashes">
         <script>
             if (correctWord.length <= 7) {
@@ -84,13 +151,13 @@
         <button style="background-image:url(../images/homeicon.png)"></button>
     </a>
 
-    <div>
+    <div id = "keyDiv">
         <object id="keyboard-object" style="width:1000px; height:300px" type="text/html" data="keyboard.html"></object>
     </div>
     <img src="../images/hanger.png" id="hanger"
          style="width: 500px; height: 600px; float:right;"/>
 
-    <p id="guesses"><b>Guesses Left: </b></p>
+    <img id="guesses" src="../images/guessesLeft.png">
     <p id="numGuesses">8</p>
 
 </div>

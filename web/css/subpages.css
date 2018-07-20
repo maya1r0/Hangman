@@ -19,7 +19,7 @@ body, html{
     top: 0%;
     bottom: 0%;
 }
-div{
+#keyDiv{
     position:absolute;
     top: 65%;
     left: 3%;
@@ -42,11 +42,9 @@ button{
 }
 
 #guesses{
-    font-family: 'Nanum Pen Script', sans-serif;
-    font-size: 50px;
     position: absolute;
-    top: 80%;
-    left: 70%;
+    top: 86%;
+    left: 69%;
 }
 
 #numGuesses{
@@ -85,20 +83,36 @@ button:hover{
 }
 
 #writtenLetters{
-    font-family: "Monaco", sans-serif;
-    font-size: 105px;
+    font-family: "Nanum Pen Script", sans-serif;
+    font-size: 120px;
+    table-layout: fixed;
     position: absolute;
-    bottom: 415px;
+    top: 345px;
     left: 170px;
+    width: 3720px;
+}
+
+#shortTD{
+    width: 123.5px;
+    vertical-align: bottom;
+    text-align: left;
 }
 
 #longWrittenLetters{
-    font-family: "Monaco", sans-serif;
-    font-size: 104px;
-    letter-spacing: 22px;
+    font-family: "Nanum Pen Script", sans-serif;
+    font-size: 105px;
+    table-layout: fixed;
     position: absolute;
-    bottom: 415px;
+    top: 370px;
     left: 150px;
+    width: 2505px;
+}
+
+#longTD{
+    width: 83.5px;
+    vertical-align: bottom;
+    text-align: left;
+    border: black;
 }
 
 #manPicture{

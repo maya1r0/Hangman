@@ -2,7 +2,7 @@ var keyboardIds = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 var correctWord;
 var letterArray;
 var guessesLeft = 8;
-var arrayToFill;
+var arrayToFill=[];
 var correctSound = new Audio("../audio/goodSound.mp4");
 var wrongSound = new Audio("../audio/wrongGuess.mp4");
 var wonGame = new Audio ("../audio/wonGame.mp4");
@@ -10,17 +10,17 @@ var lostGame = new Audio("../audio/lostGame.mp4");
 var mute = false;
 
 function generateWord() {
-    var codeNumber = Math.floor(Math.random() * Math.floor(words.length));
+    let codeNumber = Math.floor(Math.random() * Math.floor(words.length));
     correctWord = words[codeNumber];
     letterArray = new Array(correctWord.length);
-    for (var i = 0; i < correctWord.length; i++) {
+
+    for (let i = 0; i < correctWord.length; i++) {
         letterArray[i] = correctWord.charAt(i);
     }
-    arrayToFill = [];
-    for (var i = 0; i < correctWord.length; i++) {
+
+    for (let i = 0; i<correctWord.length; i++){
         arrayToFill[i] = " ";
     }
-
 }
 function generate2PlayerWord() {
     correctWord = localStorage.getItem('myWord');
@@ -91,7 +91,7 @@ function loser() {
         disableKeyboard();
 
     }
-    if (arrayToFill.indexOf(" ") === -1) {
+    if (arrayToFill.indexOf(" ") < 0) {
         if (!mute) {
             wonGame.play();
         }
@@ -101,7 +101,6 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
-
     }
 }
 
@@ -112,10 +111,16 @@ function writeLetters(buttonId) {
                 arrayToFill[i] = buttonId;
         }
     }
-    if (correctWord.length < 8)
-        document.getElementById("writtenLetters").innerHTML = arrayToFill.join(" ").toString();
-    else
-        document.getElementById("longWrittenLetters").innerHTML = arrayToFill.join("").toString();
+    if (correctWord.length <= 7) {
+        for (let j = 0; j < correctWord.length; j++) {
+            document.getElementById("firstRow").cells[j].innerHTML = arrayToFill[j];
+        }
+    }
+    else {
+        for (let j = 0; j < correctWord.length; j++) {
+            document.getElementById("longFirstRow").cells[j].innerHTML = arrayToFill[j];
+        }
+    }
 }
 
 function displayMan() {
@@ -142,6 +147,15 @@ function muteOrUnmute(){
         document.getElementById('muteButton').style.backgroundImage = "url('../images/unmuted.png')";
 }
 
+function xPopUp(){
+    document.getElementById("playAgain").style.display = "none";
+    document.getElementById("newCategory").style.display = "none";
+    document.getElementById("afterGameWord").style.display = "none";
+    document.getElementById("winner").style.display = "none";
+    document.getElementById("loser").style.display = "none";
+    document.getElementById("xButton").style.display = "none";
+}
+
 function processClick(buttonId) {
     makeGuess(buttonId);
     setColor(buttonId);
@@ -152,12 +166,7 @@ function processClick(buttonId) {
     makeGuessSound(buttonId);
 }
 
-function xPopUp(){
-    document.getElementById("playAgain").style.display = "none";
-    document.getElementById("newCategory").style.display = "none";
-    document.getElementById("afterGameWord").style.display = "none";
-    document.getElementById("winner").style.display = "none";
-    document.getElementById("loser").style.display = "none";
-    document.getElementById("xButton").style.display = "none";
-}
+
+
+
 
