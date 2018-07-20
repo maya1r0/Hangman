@@ -9,6 +9,11 @@ button{
 
     /*color: #ad1e17;*/
 }
+#userInput{
+    vertical-align: center;
+    horiz-align: center;
+
+}
 p{
     font-size: 40px;
     font-family: "Phosphate";
