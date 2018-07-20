@@ -31,3 +31,7 @@ button:hover{
     top: 1%;
     left: 1%;
 }
+#userInput{
+    height: 25px;
+    vertical-align: 9px;
+}
