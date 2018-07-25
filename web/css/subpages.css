@@ -89,11 +89,10 @@ button:hover{
     position: absolute;
     top: 37%;
     left: 170px;
-    width: 3720px;
 }
 
 #shortTD{
-    width: 123.5px;
+    width: 123px;
     vertical-align: bottom;
     text-align: left;
 }
@@ -105,11 +104,10 @@ button:hover{
     position: absolute;
     top: 37%;
     left: 150px;
-    width: 2505px;
 }
 
 #longTD{
-    width: 83.5px;
+    width: 81px;
     vertical-align: bottom;
     text-align: left;
 }

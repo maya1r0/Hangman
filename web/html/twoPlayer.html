@@ -50,70 +50,30 @@
     <img src="" id="manPicture">
     <table id = "writtenLetters">
         <tr id = "firstRow">
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
-            <td id = "shortTD"></td>
+            <script>
+                var row = document.getElementById("firstRow");
+                for (var i = 0; i < correctWord.length; i++){
+                    var td = document.createElement("td");
+                    td.id = "shortTD";
+                    var txt = document.createTextNode("");
+                    td.appendChild(txt);
+                    row.appendChild(td);
+                }
+            </script>
         </tr>
     </table>
     <table id = "longWrittenLetters">
         <tr id = "longFirstRow">
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
-            <td id = "longTD"></td>
+            <script>
+                var row = document.getElementById("longFirstRow");
+                for (var i = 0; i < correctWord.length; i++){
+                    var td = document.createElement("td");
+                    td.id = "longTD";
+                    var txt = document.createTextNode("");
+                    td.appendChild(txt);
+                    row.appendChild(td);
+                }
+            </script>
         </tr>
     </table>
     <table id="dashes">
