@@ -36,3 +36,10 @@ button:hover{
     height: 25px;
     vertical-align: 9px;
 }
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    border-radius: 50%;
+    visibility: hidden;
+}

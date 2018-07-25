@@ -19,18 +19,19 @@ function generateWord() {
     }
 
     for (let i = 0; i<correctWord.length; i++){
-        arrayToFill[i] = " ";
+        arrayToFill[i] = ' ';
     }
 }
 function generate2PlayerWord() {
     correctWord = localStorage.getItem('myWord');
     letterArray = new Array(correctWord.length);
+
     for (var i = 0; i < correctWord.length; i++) {
         letterArray[i] = correctWord.charAt(i);
     }
-    arrayToFill = [];
+
     for (var i = 0; i < correctWord.length; i++) {
-        arrayToFill[i] = " ";
+        arrayToFill[i] = ' ';
     }
 }
 
@@ -91,7 +92,7 @@ function loser() {
         disableKeyboard();
 
     }
-    if (arrayToFill.indexOf(" ") < 0) {
+    if (arrayToFill.indexOf(' ') < 0) {
         if (!mute) {
             wonGame.play();
         }
@@ -107,7 +108,7 @@ function loser() {
 function writeLetters(buttonId) {
     if (checkAnswer(buttonId)) {
         for (var i = 0; i < correctWord.length; i++) {
-            if (letterArray[i] === buttonId.toLowerCase())
+            if (letterArray[i].toLowerCase() === buttonId.toLowerCase())
                 arrayToFill[i] = buttonId;
         }
     }
@@ -164,6 +165,7 @@ function processClick(buttonId) {
     displayMan();
     loser();
     makeGuessSound(buttonId);
+    console.log(arrayToFill.toString());
 }
 
 
