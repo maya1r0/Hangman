@@ -70,16 +70,19 @@ button:hover{
     position: absolute;
     top: 30%;
     left: 140px;
+    table-layout: fixed;
 }
 
 #indvletters{
     margin: 20px;
     font-size: 170px;
+    width: 123px;
 }
 
 #longWord{
     margin: 3px;
     font-size: 155px;
+    width: 81px;
 }
 
 #writtenLetters{
