@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LeaderBoard</title>
+</head>
+<body>
+<h1 id="title">Loading...</h1>
+<script>
+    var xhr = new XMLHttpRequest();
+    var url = 'https://boba-hangman-service.herokuapp.com/store-username';
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function (data) {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                console.log("Response is received");
+                console.log(xhr.response);
+                document.getElementById("title").innerHTML = xhr.response;
+            }
+        } else {
+            //callback(null);
+        }
+    }
+    xhr.send();
+</script>
+</body>
+</html>
