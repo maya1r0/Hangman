@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Hangman | Homepage</title>
     <link rel="stylesheet" type="text/css" href="../css/Homepage.css">
+    <script src = "../script/subpages.js"></script>
     <script>
         var foodSound = new Audio('../audio/foodSound.m4a');
         var sportSound = new Audio('../audio/sportSound.m4a');
@@ -35,22 +36,7 @@
 
     <script>
         function saveName() {
-            var xhr = new XMLHttpRequest();
-            var url = 'https://boba-hangman-service.herokuapp.com/store-username?name='+document.getElementById('userName').value;
-            xhr.open('POST', url, true);
-            xhr.onreadystatechange = function (data) {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200) {
-                        console.log("Response is received");
-                        console.log(xhr.response);
-                    }
-                } else {
-                    //callback(null);
-                }
-            }
-            xhr.send();
-            //localStorage.setItem("myName", document.getElementById('userName').value.toString().replace(/ /g,''));
-            console.log(document.getElementById('userName').value);
+            postRequest('store-username?name='+document.getElementById('userName').value);
         }
     </script>
 </body>

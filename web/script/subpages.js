@@ -168,6 +168,23 @@ function processClick(buttonId) {
     console.log(arrayToFill.toString());
 }
 
+function postRequest(urlsuffix){
+    var xhr = new XMLHttpRequest();
+    var url = 'https://boba-hangman-service.herokuapp.com/'+urlsuffix;
+    xhr.open('POST', url, true);
+    xhr.onreadystatechange = function (data) {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                console.log("Response is received");
+                console.log(xhr.response);
+            }
+        } else {
+            //callback(null);
+        }
+    }
+    xhr.send();
+}
+
 
 
 
