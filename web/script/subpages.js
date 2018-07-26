@@ -77,6 +77,7 @@ function disableKeyboard() {
     }
 }
 
+var streak = 0;
 var img = "../images/winnerpic.png";
 var firstImg = "../images/loserpic.png";
 
@@ -90,6 +91,8 @@ function loser() {
         document.getElementById("newCategory").style.display = "block";
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
+        streak = 0;
+        document.getElementById("winStreak").innerHTML = "Current winning streak: " + streak;
         disableKeyboard();
         postRequest("/reset-current-streak?name="+playerName);
     }
@@ -102,9 +105,17 @@ function loser() {
         document.getElementById("newCategory").style.display = "block";
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
+        streak++;
+        document.getElementById("winStreak").innerHTML = "Current winning streak: " + streak;
         disableKeyboard();
         postRequest("up-streaks?name="+playerName);
     }
+}
+
+function getInfo() {
+        document.getElementById("OK").style.display = "block";
+        document.getElementById("noThanks").style.display = "block";
+        document.getElementById("enterName").innerHTML = "Enter your name:";
 }
 
 function writeLetters(buttonId) {

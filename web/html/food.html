@@ -28,8 +28,13 @@
 <body id="bg">
 
 <div class="mainWrap">
-    <script>
 
+    <a href="BeachPage.html"><button id= "OK" style="display:none; background-color: rebeccapurple">OK</button></a>
+    <a href="Homepage.html"><button id = "noThanks" style="display:none">No Thanks</button></a>
+    <button id = "xButton" style = "display:none" onClick = "xPopUp()">x</button>
+    <p id="enterName"></p>
+
+    <script>
         var words = ["fettuccine", "taco", "hamburger", "steak", "potato", "apple", "spinach", "salad", "cheese", "vegetables",
             "zucchini", "papaya", "brownie", "shrimp", "salmon", "sushi", "cookie", "milk", "juice", "almond",
             "salami", "asparagus", "quinoa", "kiwi", "tomato", "peanut", "tofu", "sandwich","cashew","raisin",
@@ -99,10 +104,12 @@
     <a href="Homepage.html"><button id = "newCategory" style="display:none">New Category</button></a>
     <button id = "xButton" style = "display:none" onClick = "xPopUp()">x</button>
     <p id="afterGameWord"></p>
+    <p id="winStreak"></p>
 
 
     <img src="" id="winner">
     <img src="" id="loser">
+    <img src="" id="getInfo">
 
 
     <a id="homeButton" href="Homepage.html">
