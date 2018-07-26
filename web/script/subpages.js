@@ -9,6 +9,7 @@ var wonGame = new Audio ("../audio/wonGame.mp4");
 var lostGame = new Audio("../audio/lostGame.mp4");
 var mute = false;
 var playerName = localStorage.getItem("myName");
+var currStreak = postRequest("/get-current-streak?name="+playerName);
 
 function generateWord() {
     let codeNumber = Math.floor(Math.random() * Math.floor(words.length));
@@ -92,7 +93,7 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         streak = 0;
-        document.getElementById("winStreak").innerHTML = "Current winning streak: " + streak;
+        document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
         disableKeyboard();
         postRequest("/reset-current-streak?name="+playerName);
     }
@@ -106,7 +107,7 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         streak++;
-        document.getElementById("winStreak").innerHTML = "Current winning streak: " + streak;
+        document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
         disableKeyboard();
         postRequest("up-streaks?name="+playerName);
     }
