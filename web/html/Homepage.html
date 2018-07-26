@@ -38,6 +38,7 @@
     <script>
         function saveName() {
             postRequest('store-username?name='+document.getElementById('userName').value);
+            localStorage.setItem("myName", document.getElementById('userName').value);
         }
     </script>
 </body>
