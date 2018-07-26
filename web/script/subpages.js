@@ -8,6 +8,7 @@ var wrongSound = new Audio("../audio/wrongGuess.mp4");
 var wonGame = new Audio ("../audio/wonGame.mp4");
 var lostGame = new Audio("../audio/lostGame.mp4");
 var mute = false;
+var playerName = localStorage.getItem("myName");
 
 function generateWord() {
     let codeNumber = Math.floor(Math.random() * Math.floor(words.length));
@@ -90,7 +91,7 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
-
+        postRequest("/reset-current-streak?name="+playerName);
     }
     if (arrayToFill.indexOf(' ') < 0) {
         if (!mute) {
@@ -102,6 +103,7 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
+        postRequest("up-streaks?name="+playerName);
     }
 }
 
