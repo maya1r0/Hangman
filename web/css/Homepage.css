@@ -40,3 +40,7 @@ span{
     height: 50px;
     border: none;
 }
+#leaderboard{
+    vertical-align: top;
+    text-align: left;
+}
