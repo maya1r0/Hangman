@@ -41,18 +41,12 @@ button{
     left: 65%;
 }
 
-#guesses{
-    position: absolute;
-    top: 86%;
-    left: 69%;
-}
-
 #numGuesses{
     font-family: 'Nanum Pen Script', sans-serif;
-    font-size: 55px;
+    font-size: 45px;
     position: absolute;
     top: 79%;
-    left: 86%;
+    left: 80%;
     font-weight: bold;
 }
 

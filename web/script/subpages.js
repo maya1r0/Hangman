@@ -9,7 +9,7 @@ var wonGame = new Audio ("../audio/wonGame.mp4");
 var lostGame = new Audio("../audio/lostGame.mp4");
 var mute = false;
 var playerName = localStorage.getItem("myName");
-var currStreak = postRequest("/get-current-streak?name="+playerName);
+var currStreak;
 
 function generateWord() {
     let codeNumber = Math.floor(Math.random() * Math.floor(words.length));
@@ -68,7 +68,7 @@ function writeGuesses(buttonId) {
     if (!checkAnswer(buttonId)) {
         guessesLeft--;
     }
-    document.getElementById("numGuesses").innerHTML = guessesLeft.toString();
+    document.getElementById("numGuesses").innerHTML = "Guesses Left: " + guessesLeft.toString();
 }
 
 function disableKeyboard() {
@@ -78,7 +78,6 @@ function disableKeyboard() {
     }
 }
 
-var streak = 0;
 var img = "../images/winnerpic.png";
 var firstImg = "../images/loserpic.png";
 
@@ -92,10 +91,10 @@ function loser() {
         document.getElementById("newCategory").style.display = "block";
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
-        streak = 0;
-        document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
         disableKeyboard();
         postRequest("/reset-current-streak?name="+playerName);
+        currStreak = getRequest("/get-current-streak?name="+playerName);
+        document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
     }
     if (arrayToFill.indexOf(' ') < 0) {
         if (!mute) {
@@ -106,10 +105,10 @@ function loser() {
         document.getElementById("newCategory").style.display = "block";
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
-        streak++;
-        document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
         disableKeyboard();
         postRequest("up-streaks?name="+playerName);
+        currStreak = getRequest("/get-current-streak?name="+playerName);
+        document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
     }
 }
 
@@ -185,7 +184,7 @@ function processClick(buttonId) {
 function postRequest(urlsuffix){
     var xhr = new XMLHttpRequest();
     var url = 'https://boba-hangman-service.herokuapp.com/'+urlsuffix;
-    xhr.open('POST', url, true);
+    xhr.open('POST', url, false);
     xhr.onreadystatechange = function (data) {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
@@ -197,6 +196,26 @@ function postRequest(urlsuffix){
         }
     }
     xhr.send();
+}
+
+function getRequest(urlsuffix){
+    var returnVal;
+    var xhr = new XMLHttpRequest();
+    var url = 'https://boba-hangman-service.herokuapp.com/'+urlsuffix;
+    xhr.open('GET', url, false);
+    xhr.onreadystatechange = function (data) {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                console.log("Response is received");
+                console.log(xhr.response);
+                returnVal = xhr.response;
+            }
+        } else {
+            //callback(null);
+        }
+    }
+    xhr.send();
+    return returnVal;
 }
 
 
