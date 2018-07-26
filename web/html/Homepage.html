@@ -20,9 +20,9 @@
     <table style="margin: 80px auto;">
         <tr>
             <td id="categories">
-                <a href="food.html"><button style="background-image: url(../images/food.png);" onmouseover="if(!mute) {foodSound.play();}" onClick="getInfo()"><b>Food</b></button></a>
+                <a href="food.html"><button style="background-image: url(../images/food.png);" onmouseover="if(!mute) {foodSound.play();}"><b>Food</b></button></a>
                 <a href="SportsPage.html"><button style="background-image: url(../images/sports.png)" onmouseover="if (!mute)sportSound.play()"><b>Sports</b></button></a>
-                <a href="BeachPage.html"><button style="background-image: url(../images/beach.png)" onmouseover="if (!mute)beachSound.play()"><b>Beach</b></button></a>
+                <a href="BeachPage.html"><button style="background-image: url(../images/beach.png)" onmouseover="if (!mute)beachSound.play();"><b>Beach</b></button></a>
                 <a href="animals.html"><button style="background-image: url(../images/animals.png)" onmouseover="if (!mute)animalSound.play()"><b>Animals</b></button></a>
                 <a href="EnterWord.html"><button style="background-image: url(../images/two-Player.png); vertical-align: top" onmouseover="if(!mute)twoPlayerSound.play()"><b>Two-Player</b></button></a>
             </td>
@@ -30,16 +30,8 @@
     </table>
     <a href="aboutTheAuthors.html"><button style = "background-image: url(../images/pencil.png);"><b>About the Authors</b></button></a>
     <a href = "LeaderBoard.html"><button id="leaderboard" style="background-image: url(../images/leaderboard1.png);"><b>Leaderboard</b></button></a>
-    <p>Enter Your Name:</p>
-    <p style="font-family: 'Nanum Pen Script',sans-serif; color: #ad1e17"><b>Your Name: </b><input type="text" id="userName"></p>
-    <button style="background-image: url(../images/startbg.png)"onclick = saveName()><b>ENTER</b></button>
+
     <button id="muteButton" onclick="muteOrUnmute()"></button>
 
-    <script>
-        function saveName() {
-            postRequest('store-username?name='+document.getElementById('userName').value);
-            localStorage.setItem("myName", document.getElementById('userName').value);
-        }
-    </script>
 </body>
 </html>
