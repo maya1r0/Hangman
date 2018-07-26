@@ -121,33 +121,61 @@ button:hover{
 
 #enterName{
     position: absolute;
-    top: 42.75%;
-    left: 38.5%;
+    top: 28%;
+    left: 39%;
     z-index:2;
-    font-size: 40px;
+    font-size: 50px;
     font-family: "Nanum Pen Script", sans-serif;
+    font-weight: bold;
+}
+
+#nameInput{
+    position: absolute;
+    top: 43%;
+    left: 41%;
+    z-index: 2;
+    width: 200px;
+    height: 20px;
 }
 
 #OK{
     position:absolute;
     top: 50%;
-    right: 52%;
+    right: 44%;
     z-index: 2;
-    height: 100px;
-    width: 150px;
+    height: 50px;
+    width: 80px;
     font-size: 30px;
-    background-image: url('../images/beach.png');
 }
 
 #noThanks{
     position:absolute;
     top: 50%;
-    right: 52%;
+    right: 50.5%;
     z-index: 2;
-    height: 100px;
+    height: 50px;
     width: 150px;
     font-size: 30px;
-    background-image: url('../images/beach.png');
+}
+
+#explanation{
+    position: absolute;
+    top: 58%;
+    left: 31.5%;
+    z-index:2;
+    font-size: 28px;
+    font-family: "Nanum Pen Script", sans-serif;
+    font-weight: bold;
+}
+
+
+#getInfobg{
+    position:absolute;
+    display: block;
+    top: 25%;
+    left: 27%;
+    width: 730px;
+    z-index: 1;
 }
 
 #loser{

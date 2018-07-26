@@ -113,10 +113,29 @@ function loser() {
     }
 }
 
+var bgImg = "../images/getinfobg.png";
+
 function getInfo() {
+        document.getElementById("getInfobg").src = bgImg.toString();
         document.getElementById("OK").style.display = "block";
         document.getElementById("noThanks").style.display = "block";
-        document.getElementById("enterName").innerHTML = "Enter your name:";
+        document.getElementById("enterName").innerHTML = "Enter your name: ";
+        document.getElementById("nameInput").style.display = "block";
+        document.getElementById("explanation").innerHTML = "*This will allow you to keep track of your winning streak";
+}
+
+function closeGetInfo(){
+    document.getElementById("OK").style.display = "none";
+    document.getElementById("noThanks").style.display = "none";
+    document.getElementById("enterName").style.display = "none";
+    document.getElementById("nameInput").style.display = "none";
+    document.getElementById("getInfobg").style.display = "none";
+    document.getElementById("explanation").style.display = "none";
+}
+
+function saveName(elemId) {
+    postRequest('store-username?name='+document.getElementById(elemId).value);
+    localStorage.setItem("myName", document.getElementById(elemId).value);
 }
 
 function writeLetters(buttonId) {
