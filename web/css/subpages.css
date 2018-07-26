@@ -119,6 +119,36 @@ button:hover{
     zoom: 38%;
 }
 
+#enterName{
+    position: absolute;
+    top: 42.75%;
+    left: 38.5%;
+    z-index:2;
+    font-size: 40px;
+    font-family: "Nanum Pen Script", sans-serif;
+}
+
+#OK{
+    position:absolute;
+    top: 50%;
+    right: 52%;
+    z-index: 2;
+    height: 100px;
+    width: 150px;
+    font-size: 30px;
+    background-image: url('../images/beach.png');
+}
+
+#noThanks{
+    position:absolute;
+    top: 50%;
+    right: 52%;
+    z-index: 2;
+    height: 100px;
+    width: 150px;
+    font-size: 30px;
+    background-image: url('../images/beach.png');
+}
 
 #loser{
     position:absolute;
@@ -166,6 +196,15 @@ button:hover{
     left: 38.5%;
     z-index:2;
     font-size: 40px;
+    font-family: "Nanum Pen Script", sans-serif;
+}
+
+#winStreak{
+    position: absolute;
+    top: 60.5%;
+    left: 53%;
+    z-index: 2;
+    font-size: 30px;
     font-family: "Nanum Pen Script", sans-serif;
 }
 

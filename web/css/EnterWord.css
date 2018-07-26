@@ -1,7 +1,7 @@
-button{
+#startButton{
     font-size: 40px;
     font-family: "Nanum Pen Script", sans-serif;
-    margin: 15px;
+    margin-bottom: 40px;
     height:50px;
     width:110px;
     border-radius: 8px;
@@ -9,14 +9,26 @@ button{
 
     /*color: #ad1e17;*/
 }
+
+button{
+    font-size: 40px;
+    font-family: "Nanum Pen Script", sans-serif;
+    margin: 15px;
+    height:50px;
+    width:50px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
 #userInput{
     vertical-align: center;
     horiz-align: center;
 
 }
-p{
+#prompt{
     font-size: 40px;
     font-family: "Phosphate";
+    margin-top: -3%;
 }
 body{
     background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Ec7hwrKKxik52rser/4k-white-clean-bokeh-background-animation-seamless-loop_v4gh9vafe__F0000.png");
@@ -42,4 +54,15 @@ button:hover{
     background-color: #555;
     border-radius: 50%;
     visibility: hidden;
+}
+
+span{
+    color: rgba(255, 255, 255, 0);
+}
+
+p{
+    font-family: "Phosphate";
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
