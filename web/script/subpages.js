@@ -92,9 +92,11 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
-        postRequest("/reset-current-streak?name="+sessionStorage.getItem('myName'));
-        currStreak = getRequest("/get-current-streak?name="+sessionStorage.getItem("myName"));
-        document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
+        if (sessionStorage.getItem("noThanks") === null) {
+            postRequest("/reset-current-streak?name=" + sessionStorage.getItem('myName'));
+            currStreak = getRequest("/get-current-streak?name=" + sessionStorage.getItem("myName"));
+            document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
+        }
     }
     if (arrayToFill.indexOf(' ') < 0) {
         if (!mute) {
@@ -106,9 +108,11 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
-        postRequest("up-streaks?name="+sessionStorage.getItem("myName"));
-        currStreak = getRequest("/get-current-streak?name="+sessionStorage.getItem("myName"));
-        document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
+        if (sessionStorage.getItem("noThanks") === null) {
+            postRequest("up-streaks?name=" + sessionStorage.getItem("myName"));
+            currStreak = getRequest("/get-current-streak?name=" + sessionStorage.getItem("myName"));
+            document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
+        }
     }
 }
 
@@ -135,6 +139,10 @@ function closeGetInfo(){
 function saveName(elemId) {
     postRequest('store-username?name=' + document.getElementById(elemId).value);
     sessionStorage.setItem("myName", document.getElementById(elemId).value);
+}
+
+function noThanks(){
+    sessionStorage.setItem("noThanks", "clicked");
 }
 
 function writeLetters(buttonId) {
