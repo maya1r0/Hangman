@@ -32,10 +32,16 @@
     <button id = "noThanks" style="display: none;" onClick="closeGetInfo()">No Thanks</button>
     <p id="enterName"></p>
     <input type="text" id="nameInput" style="display: none">
-    <button id= "OK" style="display: none;" onclick="saveName('nameInput'), closeGetInfo()">OK</button>
+    <button id= "OK" style="display: none;" onclick="saveName('nameInput'); closeGetInfo()">OK</button>
     <p id="explanation"></p>
     <img src="" id="getInfobg">
-    <script>getInfo()</script>
+    <script>
+        console.log(sessionStorage.getItem("myName"));
+        if (sessionStorage.getItem("myName") === null) {
+            console.log("yes");
+            getInfo();
+        }
+    </script>
 
     <script>
         var words = ["fettuccine", "taco", "hamburger", "steak", "potato", "apple", "spinach", "salad", "cheese", "vegetables",

@@ -8,8 +8,8 @@ var wrongSound = new Audio("../audio/wrongGuess.mp4");
 var wonGame = new Audio ("../audio/wonGame.mp4");
 var lostGame = new Audio("../audio/lostGame.mp4");
 var mute = false;
-var playerName = localStorage.getItem("myName");
 var currStreak;
+
 
 function generateWord() {
     let codeNumber = Math.floor(Math.random() * Math.floor(words.length));
@@ -92,8 +92,8 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
-        postRequest("/reset-current-streak?name="+playerName);
-        currStreak = getRequest("/get-current-streak?name="+playerName);
+        postRequest("/reset-current-streak?name="+sessionStorage.getItem('myName'));
+        currStreak = getRequest("/get-current-streak?name="+sessionStorage.getItem("myName"));
         document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
     }
     if (arrayToFill.indexOf(' ') < 0) {
@@ -106,8 +106,8 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
-        postRequest("up-streaks?name="+playerName);
-        currStreak = getRequest("/get-current-streak?name="+playerName);
+        postRequest("up-streaks?name="+sessionStorage.getItem("myName"));
+        currStreak = getRequest("/get-current-streak?name="+sessionStorage.getItem("myName"));
         document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
     }
 }
@@ -133,8 +133,8 @@ function closeGetInfo(){
 }
 
 function saveName(elemId) {
-    postRequest('store-username?name='+document.getElementById(elemId).value);
-    localStorage.setItem("myName", document.getElementById(elemId).value);
+    postRequest('store-username?name=' + document.getElementById(elemId).value);
+    sessionStorage.setItem("myName", document.getElementById(elemId).value);
 }
 
 function writeLetters(buttonId) {
@@ -218,6 +218,7 @@ function postRequest(urlsuffix){
 }
 
 function getRequest(urlsuffix){
+    console.log("sophie likes clams" + urlsuffix);
     var returnVal;
     var xhr = new XMLHttpRequest();
     var url = 'https://boba-hangman-service.herokuapp.com/'+urlsuffix;
