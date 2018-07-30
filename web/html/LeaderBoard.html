@@ -26,15 +26,17 @@
     </tr>
 <script>
     var table = document.getElementById("leaderboard");
-    var tableMap = getRequest("/get-table");
+    var tableMap = getRequest("get-table");
     console.log(tableMap);
-    for (let i = 0; i<tableMap.size(); i++){
+    console.log(tableMap.length);
+    for (let i = 0; i<10; i++){
+        // console.log(i);
         var tr = document.createElement("tr");
         var nameTD = document.createElement("td");
-        var nameText = document.createTextNode(tableMap.get(i).get("name"));
+        var nameText = document.createTextNode(tableMap[i].name);
         nameTD.id = "name";
         var maxTD = document.createElement("td");
-        var maxText = document.createTextNode(tableMap.get(i).get("max_streak"));
+        var maxText = document.createTextNode(tableMap[i].max_streak);
         maxTD.id = "max";
         var rankTD = document.createElement("td");
         var rankText = document.createTextNode((i+1).toString());

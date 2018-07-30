@@ -236,8 +236,7 @@ function getRequest(urlsuffix){
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
                 console.log("Response is received");
-                console.log(xhr.response);
-                returnVal = xhr.response;
+                returnVal = JSON.parse(xhr.response);
             }
         } else {
             //callback(null);
