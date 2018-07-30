@@ -192,7 +192,7 @@ button:hover{
 
 #playAgain{
     position:absolute;
-    top: 50%;
+    top: 51%;
     right: 52%;
     z-index: 2;
     height: 100px;
@@ -203,7 +203,7 @@ button:hover{
 
 #newCategory{
     position:absolute;
-    top: 50%;
+    top: 51%;
     right: 40%;
     z-index: 2;
     height: 100px;
@@ -214,8 +214,8 @@ button:hover{
 
 #afterGameWord{
     position: absolute;
-    top: 42.75%;
-    left: 38.5%;
+    top: 43%;
+    left: 39%;
     z-index:2;
     font-size: 40px;
     font-family: "Nanum Pen Script", sans-serif;
@@ -224,7 +224,7 @@ button:hover{
 #winStreak{
     position: absolute;
     top: 60.5%;
-    left: 53%;
+    left: 40%;
     z-index: 2;
     font-size: 30px;
     font-family: "Nanum Pen Script", sans-serif;
@@ -246,7 +246,7 @@ button:hover{
 #xButton{
     position: absolute;
     top: 26%;
-    left: 66%;
+    left: 28%;
     height: 35px;
     width: 35px;
     font-size: 30px;
