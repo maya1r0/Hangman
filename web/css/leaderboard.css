@@ -1,0 +1,68 @@
+body{
+    background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Ec7hwrKKxik52rser/4k-white-clean-bokeh-background-animation-seamless-loop_v4gh9vafe__F0000.png");
+}
+
+
+button{
+    font-size: 40px;
+    font-family: "Nanum Pen Script", sans-serif;
+    margin: 15px;
+    height:50px;
+    width:50px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:hover{
+    transform: scale(1.2);
+}
+
+table{
+    border: 10px;
+    border-collapse: collapse;
+    margin: 20px;
+    font-family: "Nanum Pen Script", sans-serif;
+    font-size: 32px;
+    width: 95%;
+}
+
+#leadTitleTH{
+    text-align: center;
+    color: black;
+    font-weight: normal;
+    font-size: 72px;
+}
+
+span{
+    font-family: "Nanum Pen Script", sans-serif;
+    font-size: 120px;
+    color: #ad1e17;
+    font-weight: bold;
+}
+
+th{
+    font-size: 45px;
+    font-family: "Phosphate", sans-serif;
+    font-weight: bold;
+    color: #ad1e17;
+}
+
+th, td, tr{
+    text-align: left;
+    padding: 15px;
+    border: 3px solid #ad1e17;
+    margin-left: 20px;
+}
+
+tr:hover{
+    background-color: #f5f5f5;
+}
+
+#rank{
+    width: 14%;
+}
+
+#name, #max{
+    width: 43%;
+}
+

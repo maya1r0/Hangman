@@ -3,17 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Hangman | Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="../css/leaderboard.css">
+    <script src = "../script/subpages.js"></script>
 </head>
 <body>
-<table>
+<a id="homeButton" href="Homepage.html">
+    <button style="background-image:url(../images/homeicon.png); height: 50px; width: 50px"></button>
+</a>
+<table id = "leaderboard">
+    <tr>
+        <th id = "leadTitleTH" colspan = "3"><span>HANGMAN</span> Leaderboard!</th>
+    </tr>
+    <tr>
+        <th id = "rank">Rank</th>
+        <th id = "name">Name</th>
+        <th id = "max">Best Streak</th>
+    </tr>
+    <tr>
+        <td>stuff</td>
+        <td>stuff</td>
+        <td>stuff</td>
+    </tr>
 <script>
-    for (let i = 0; i<getRequest("/get-num-entries"); i++){
-
+    var table = document.getElementById("leaderboard");
+    var tableMap = getRequest("/get-table");
+    console.log(tableMap);
+    for (let i = 0; i<tableMap.size(); i++){
+        var tr = document.createElement("tr");
+        var nameTD = document.createElement("td");
+        var nameText = document.createTextNode(tableMap.get(i).get("name"));
+        nameTD.id = "name";
+        var maxTD = document.createElement("td");
+        var maxText = document.createTextNode(tableMap.get(i).get("max_streak"));
+        maxTD.id = "max";
+        var rankTD = document.createElement("td");
+        var rankText = document.createTextNode((i+1).toString());
+        rankTD.id = "rank";
+        nameTD.appendChild(nameText);
+        maxTD.appendChild(maxText);
+        rankTD.appendChild(rankText);
+        tr.appendChild(rankTD);
+        tr.appendChild(nameTD);
+        tr.appendChild(maxTD);
+        table.appendChild(tr);
     }
 </script>
 </table>
-<script>
-
-</script>
 </body>
 </html>

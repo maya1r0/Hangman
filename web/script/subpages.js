@@ -195,6 +195,7 @@ function xPopUp(){
     document.getElementById("winner").style.display = "none";
     document.getElementById("loser").style.display = "none";
     document.getElementById("xButton").style.display = "none";
+    document.getElementById("winStreak").style.display = "none";
 }
 
 function processClick(buttonId) {
