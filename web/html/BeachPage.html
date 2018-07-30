@@ -35,7 +35,7 @@
     <p id="explanation"></p>
     <img src="" id="getInfobg">
     <script>
-        if (sessionStorage.getItem("myName") === null) {
+        if ((sessionStorage.getItem("myName") === null) && (sessionStorage.getItem("noThanks") === null)) {
             getInfo();
         }
 

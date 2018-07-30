@@ -19,16 +19,35 @@
         <th id = "name">Name</th>
         <th id = "max">Best Streak</th>
     </tr>
-    <tr>
-        <td>stuff</td>
-        <td>stuff</td>
-        <td>stuff</td>
-    </tr>
 <script>
     var table = document.getElementById("leaderboard");
     var tableMap = getRequest("get-table");
     console.log(tableMap);
     console.log(tableMap.length);
+    if (sessionStorage.getItem("myName") !== null){
+        for (let i = 0; i<tableMap.length; i++){
+            if(tableMap[i].name === sessionStorage.getItem("myName")){
+                var tr = document.createElement("tr");
+                tr.id = "currPlayerInfo";
+                var nameTD = document.createElement("td");
+                var nameText = document.createTextNode(tableMap[i].name);
+                nameTD.id = "name";
+                var maxTD = document.createElement("td");
+                var maxText = document.createTextNode(tableMap[i].max_streak);
+                maxTD.id = "max";
+                var rankTD = document.createElement("td");
+                var rankText = document.createTextNode((i+1).toString());
+                rankTD.id = "rank";
+                nameTD.appendChild(nameText);
+                maxTD.appendChild(maxText);
+                rankTD.appendChild(rankText);
+                tr.appendChild(rankTD);
+                tr.appendChild(nameTD);
+                tr.appendChild(maxTD);
+                table.appendChild(tr);
+            }
+        }
+    }
     for (let i = 0; i<10; i++){
         // console.log(i);
         var tr = document.createElement("tr");
