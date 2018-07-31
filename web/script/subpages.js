@@ -92,7 +92,7 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
-        if (sessionStorage.getItem("noThanks") === null) {
+        if (sessionStorage.getItem("noThanks") === null && manArray[0].toString() !== "../images/normalguy0.png") {
             postRequest("/reset-current-streak?name=" + sessionStorage.getItem('myName'));
             currStreak = getRequest("/get-current-streak?name=" + sessionStorage.getItem("myName"));
             document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
@@ -108,7 +108,7 @@ function loser() {
         document.getElementById("xButton").style.display = "block";
         document.getElementById("afterGameWord").innerHTML = "The word was: " + correctWord;
         disableKeyboard();
-        if (sessionStorage.getItem("noThanks") === null) {
+        if (sessionStorage.getItem("noThanks") === null && manArray[0].toString() !== "../images/normalguy0.png") {
             postRequest("up-streaks?name=" + sessionStorage.getItem("myName"));
             currStreak = getRequest("/get-current-streak?name=" + sessionStorage.getItem("myName"));
             document.getElementById("winStreak").innerHTML = "Current winning streak: " + currStreak;
